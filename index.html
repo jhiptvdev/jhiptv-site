@@ -26,6 +26,9 @@
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
   <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8L3.5 9.7l5.9-.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
   <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="4" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="13" width="8" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-rec" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="currentColor"/></symbol>
+  <symbol id="i-sort" viewBox="0 0 24 24"><path d="M4 6h10M4 12h7M4 18h4M17 5v14M14 16l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15zM10 20.5a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V8a4 4 0 018 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 6.5L12 13l8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
@@ -76,16 +79,17 @@
     <div class="wrap">
       <div class="sec-h"><h2 data-i="dl_h"></h2><p data-i="dl_p"></p></div>
       <div class="stores">
-        <a class="store" href="https://play.google.com/store/apps/details?id=pt.jh.iptv" target="_blank" rel="noopener">
-          <span class="ic"><svg><use href="#i-phone"/></svg></span>
-          <span><h3>Google Play</h3><small data-i="st_gp"></small></span>
-          <span class="go"><span data-i="open">Abrir loja</span><svg><use href="#i-arrow"/></svg></span>
-        </a>
         <a class="store" href="https://apps.microsoft.com/detail/9P0GNW18165F" target="_blank" rel="noopener">
           <span class="ic"><svg><use href="#i-monitor"/></svg></span>
           <span><h3>Microsoft Store</h3><small data-i="st_ms"></small></span>
           <span class="go"><span data-i="open">Abrir loja</span><svg><use href="#i-arrow"/></svg></span>
         </a>
+        <div class="store soon">
+          <span class="ic"><svg><use href="#i-phone"/></svg></span>
+          <span><h3>Google Play</h3><small data-i="st_gp"></small></span>
+          <span class="tag" data-i="soon">Brevemente</span>
+        </div>
+        
         <div class="store soon">
           <span class="ic"><svg><use href="#i-tv"/></svg></span>
           <span><h3>LG Content Store</h3><small data-i="st_lg"></small></span>
@@ -112,10 +116,13 @@
       <div class="feat">
         <div class="f"><span class="ic"><svg><use href="#i-guide"/></svg></span><h3 data-i="f1"></h3><p data-i="f1s"></p></div>
         <div class="f"><span class="ic"><svg><use href="#i-rewind"/></svg></span><h3 data-i="f2"></h3><p data-i="f2s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-rec"/></svg></span><h3 data-i="f4"></h3><p data-i="f4s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-sort"/></svg></span><h3 data-i="f5"></h3><p data-i="f5s"></p></div>
         <div class="f"><span class="ic"><svg><use href="#i-search"/></svg></span><h3 data-i="f3"></h3><p data-i="f3s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-star"/></svg></span><h3 data-i="f4"></h3><p data-i="f4s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-grid"/></svg></span><h3 data-i="f5"></h3><p data-i="f5s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-lock"/></svg></span><h3 data-i="f6"></h3><p data-i="f6s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-grid"/></svg></span><h3 data-i="f6"></h3><p data-i="f6s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-bell"/></svg></span><h3 data-i="f7"></h3><p data-i="f7s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-lock"/></svg></span><h3 data-i="f8"></h3><p data-i="f8s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-qr"/></svg></span><h3 data-i="f9"></h3><p data-i="f9s"></p></div>
       </div>
       <img class="guide" data-src="/{l}-tv-guide.webp" src="/pt-tv-guide.webp" alt="" data-ialt="alt_guide" width="1280" height="720" loading="lazy">
     </div>

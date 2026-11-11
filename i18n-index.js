@@ -8,7 +8,7 @@ lead:"A JH IPTV abre a sua lista M3U ou conta Xtream Codes com guia de programa�
 cta1:"Descarregar grátis",cta2:"Adicionar lista com o telemóvel",
 tr1:"Grátis",tr2:"Sem publicidade",tr3:"Sem recolha de dados",tr4:"6 idiomas",
 alt_tv:"JH IPTV numa TV: lista de canais com o guia de programação",alt_ph:"JH IPTV num telemóvel",alt_guide:"Guia TV em grelha da JH IPTV",
-dl_h:"Descarregue a JH IPTV",dl_p:"Já disponível para Android e Windows. Mais lojas a caminho.",
+dl_h:"Descarregue a JH IPTV",dl_p:"Já disponível para Windows. Android, Android TV e Smart TVs a caminho.",
 st_gp:"Telemóveis, tablets e Android TV",st_ms:"Computadores com Windows 10 e 11",st_lg:"Smart TVs LG (webOS)",st_am:"Fire TV e tablets Fire",st_ap:"iPhone, iPad e Apple TV",
 open:"Abrir loja",soon:"Brevemente",
 dl_note:"Tem uma TV Samsung? <a href=\"#contacto\">Escreva-nos</a> e explicamos como instalar.",
@@ -16,9 +16,9 @@ ft_h:"Tudo o que precisa para ver TV",ft_p:"Pensada para usar com o comando, com
 f1:"Guia de programação",f1s:"Veja o que está a dar agora e a seguir em cada canal, e o Guia TV em grelha.",
 f2:"Recuar no direto e catch-up",f2s:"Volte atrás no programa que está a ver e veja programas até 7 dias para trás, quando o seu fornecedor o permite.",
 f3:"Procurar em tudo",f3s:"Encontre canais, filmes, séries e programas do guia numa só pesquisa.",
-f4:"Favoritos e lembretes",f4s:"Ordene os favoritos à sua maneira e receba um aviso quando o programa começar.",
-f5:"Vários canais ao mesmo tempo",f5s:"No Windows, veja até 4 canais lado a lado e escolha qual ouvir.",
-f6:"Controlo parental",f6s:"Proteja categorias com PIN e esconda os canais que não quer ver.",
+
+
+
 qr_h:"Adicione a lista sem escrever com o comando",
 qr_p:"Escrever um link comprido com o comando da TV é demorado. Com a JH IPTV escreve tudo no telemóvel.",
 s1b:"Abra a JH IPTV na TV",s1s:"Em «As minhas listas», escolha «Escrever no telemóvel».",
@@ -33,7 +33,8 @@ l_name:"Nome",l_mail:"Email",l_topic:"Assunto",o_sug:"Sugestão",o_bug:"Problema
 l_dev:"Aparelho",d_and:"Android (telemóvel/tablet)",d_atv:"Android TV / box",d_lg:"TV LG",d_sam:"TV Samsung",d_oth:"Outro",
 l_msg:"Mensagem",p_msg:"Escreva aqui a sua mensagem…",
 fine:"Não pedimos nem fornecemos listas ou canais. Nunca envie palavras-passe por este formulário.",
-send:"Enviar mensagem",sending:"A enviar…",ok:"Obrigado! Recebemos a sua mensagem.",err:"Não foi possível enviar. Tente outra vez ou escreva para jhiptv.dev@gmail.com.",need:"Preencha o nome, um email válido e a mensagem."
+send:"Enviar mensagem",sending:"A enviar…",ok:"Obrigado! Recebemos a sua mensagem.",err:"Não foi possível enviar. Tente outra vez ou escreva para jhiptv.dev@gmail.com.",need:"Preencha o nome, um email válido e a mensagem.",
+f4:"Gravar programas",f4s:"No Windows, grave o que está a dar ou agende a gravação a partir do guia. Os vídeos ficam na pasta Vídeos.",f5:"Organize à sua maneira",f5s:"Ordene os grupos e os favoritos como quiser, mude o nome ou o número dos canais e esconda os que não vê.",f6:"Vários canais ao mesmo tempo",f6s:"No Windows, veja até 4 canais lado a lado e escolha qual ouvir.",f7:"Lembretes",f7s:"Marque um programa no guia e a app avisa quando estiver a começar.",f8:"Controlo parental",f8s:"Proteja categorias com PIN e esconda o que não quer que as crianças vejam.",f9:"Do telemóvel para a TV",f9s:"Aponte o telemóvel ao código QR da TV e escreva a lista no telemóvel, sem usar o comando."
 },
 en:{
 title:"JH IPTV — IPTV player for Android, Windows and Smart TV",
@@ -44,7 +45,7 @@ lead:"JH IPTV opens your M3U playlist or Xtream Codes account with a programme g
 cta1:"Download for free",cta2:"Add a playlist from your phone",
 tr1:"Free",tr2:"No ads",tr3:"No data collection",tr4:"6 languages",
 alt_tv:"JH IPTV on a TV: channel list with programme guide",alt_ph:"JH IPTV on a phone",alt_guide:"JH IPTV TV Guide grid",
-dl_h:"Get JH IPTV",dl_p:"Available now for Android and Windows. More stores on the way.",
+dl_h:"Get JH IPTV",dl_p:"Available now for Windows. Android, Android TV and Smart TVs on the way.",
 st_gp:"Phones, tablets and Android TV",st_ms:"Windows 10 and 11 computers",st_lg:"LG Smart TVs (webOS)",st_am:"Fire TV and Fire tablets",st_ap:"iPhone, iPad and Apple TV",
 open:"Open store",soon:"Coming soon",
 dl_note:"Have a Samsung TV? <a href=\"#contacto\">Write to us</a> and we'll explain how to install it.",
@@ -52,9 +53,9 @@ ft_h:"Everything you need to watch TV",ft_p:"Designed for the remote, the mouse 
 f1:"Programme guide",f1s:"See what's on now and next on every channel, plus a TV Guide grid.",
 f2:"Live rewind and catch-up",f2s:"Go back in the programme you're watching and watch shows from up to 7 days ago, when your provider supports it.",
 f3:"Search everything",f3s:"Find channels, movies, series and guide programmes in one search.",
-f4:"Favourites and reminders",f4s:"Sort favourites your way and get a reminder when a programme starts.",
-f5:"Several channels at once",f5s:"On Windows, watch up to 4 channels side by side and choose which one to hear.",
-f6:"Parental control",f6s:"Protect categories with a PIN and hide the channels you don't want.",
+
+
+
 qr_h:"Add your playlist without typing on the remote",
 qr_p:"Typing a long link with a TV remote takes ages. With JH IPTV you type everything on your phone.",
 s1b:"Open JH IPTV on your TV",s1s:"In “My playlists”, choose “Type on my phone”.",
@@ -69,7 +70,8 @@ l_name:"Name",l_mail:"Email",l_topic:"Subject",o_sug:"Suggestion",o_bug:"Problem
 l_dev:"Device",d_and:"Android (phone/tablet)",d_atv:"Android TV / box",d_lg:"LG TV",d_sam:"Samsung TV",d_oth:"Other",
 l_msg:"Message",p_msg:"Write your message here…",
 fine:"We don't ask for or provide playlists or channels. Never send passwords through this form.",
-send:"Send message",sending:"Sending…",ok:"Thank you! We've received your message.",err:"Couldn't send. Please try again or write to jhiptv.dev@gmail.com.",need:"Please fill in your name, a valid email and your message."
+send:"Send message",sending:"Sending…",ok:"Thank you! We've received your message.",err:"Couldn't send. Please try again or write to jhiptv.dev@gmail.com.",need:"Please fill in your name, a valid email and your message.",
+f4:"Record programmes",f4s:"On Windows, record what's on now or schedule a recording from the guide. Videos are saved in your Videos folder.",f5:"Organise it your way",f5s:"Sort groups and favourites however you like, rename or renumber channels and hide the ones you never watch.",f6:"Several channels at once",f6s:"On Windows, watch up to 4 channels side by side and choose which one to hear.",f7:"Reminders",f7s:"Mark a programme in the guide and the app lets you know when it's about to start.",f8:"Parental control",f8s:"Protect categories with a PIN and hide what you don't want children to see.",f9:"From your phone to the TV",f9s:"Point your phone at the TV's QR code and type your playlist on the phone, no remote needed."
 },
 es:{
 title:"JH IPTV — Reproductor IPTV para Android, Windows y Smart TV",
@@ -80,7 +82,7 @@ lead:"JH IPTV abre tu lista M3U o cuenta Xtream Codes con guía de programación
 cta1:"Descargar gratis",cta2:"Añadir lista con el móvil",
 tr1:"Gratis",tr2:"Sin publicidad",tr3:"Sin recogida de datos",tr4:"6 idiomas",
 alt_tv:"JH IPTV en una TV: lista de canales con la guía de programación",alt_ph:"JH IPTV en un móvil",alt_guide:"Guía TV en cuadrícula de JH IPTV",
-dl_h:"Descarga JH IPTV",dl_p:"Ya disponible para Android y Windows. Más tiendas en camino.",
+dl_h:"Descarga JH IPTV",dl_p:"Ya disponible para Windows. Android, Android TV y Smart TV en camino.",
 st_gp:"Móviles, tablets y Android TV",st_ms:"Ordenadores con Windows 10 y 11",st_lg:"Smart TV LG (webOS)",st_am:"Fire TV y tablets Fire",st_ap:"iPhone, iPad y Apple TV",
 open:"Abrir tienda",soon:"Próximamente",
 dl_note:"¿Tienes una TV Samsung? <a href=\"#contacto\">Escríbenos</a> y te explicamos cómo instalarla.",
@@ -88,9 +90,9 @@ ft_h:"Todo lo que necesitas para ver la TV",ft_p:"Pensada para usar con el mando
 f1:"Guía de programación",f1s:"Mira qué hay ahora y a continuación en cada canal, y la Guía TV en cuadrícula.",
 f2:"Retroceso en directo y catch-up",f2s:"Vuelve atrás en el programa que estás viendo y mira programas de hasta 7 días atrás, si tu proveedor lo permite.",
 f3:"Buscar en todo",f3s:"Encuentra canales, películas, series y programas de la guía en una sola búsqueda.",
-f4:"Favoritos y recordatorios",f4s:"Ordena los favoritos a tu manera y recibe un aviso cuando empiece el programa.",
-f5:"Varios canales a la vez",f5s:"En Windows, mira hasta 4 canales a la vez y elige cuál escuchar.",
-f6:"Control parental",f6s:"Protege categorías con PIN y oculta los canales que no quieres ver.",
+
+
+
 qr_h:"Añade la lista sin escribir con el mando",
 qr_p:"Escribir un enlace largo con el mando de la TV es lento. Con JH IPTV lo escribes todo en el móvil.",
 s1b:"Abre JH IPTV en la TV",s1s:"En «Mis listas», elige «Escribir en el móvil».",
@@ -105,7 +107,8 @@ l_name:"Nombre",l_mail:"Email",l_topic:"Asunto",o_sug:"Sugerencia",o_bug:"Proble
 l_dev:"Dispositivo",d_and:"Android (móvil/tablet)",d_atv:"Android TV / box",d_lg:"TV LG",d_sam:"TV Samsung",d_oth:"Otro",
 l_msg:"Mensaje",p_msg:"Escribe aquí tu mensaje…",
 fine:"No pedimos ni proporcionamos listas ni canales. No envíes nunca contraseñas por este formulario.",
-send:"Enviar mensaje",sending:"Enviando…",ok:"¡Gracias! Hemos recibido tu mensaje.",err:"No se pudo enviar. Inténtalo de nuevo o escribe a jhiptv.dev@gmail.com.",need:"Rellena el nombre, un email válido y el mensaje."
+send:"Enviar mensaje",sending:"Enviando…",ok:"¡Gracias! Hemos recibido tu mensaje.",err:"No se pudo enviar. Inténtalo de nuevo o escribe a jhiptv.dev@gmail.com.",need:"Rellena el nombre, un email válido y el mensaje.",
+f4:"Grabar programas",f4s:"En Windows, graba lo que estás viendo o programa la grabación desde la guía. Los vídeos se guardan en la carpeta Vídeos.",f5:"Organízala a tu manera",f5s:"Ordena los grupos y los favoritos como quieras, cambia el nombre o el número de los canales y oculta los que no ves.",f6:"Varios canales a la vez",f6s:"En Windows, mira hasta 4 canales a la vez y elige cuál escuchar.",f7:"Recordatorios",f7s:"Marca un programa en la guía y la app te avisa cuando vaya a empezar.",f8:"Control parental",f8s:"Protege categorías con PIN y oculta lo que no quieres que vean los niños.",f9:"Del móvil a la TV",f9s:"Apunta el móvil al código QR de la TV y escribe la lista en el móvil, sin usar el mando."
 },
 fr:{
 title:"JH IPTV — Lecteur IPTV pour Android, Windows et Smart TV",
@@ -116,7 +119,7 @@ lead:"JH IPTV ouvre votre liste M3U ou votre compte Xtream Codes avec guide des 
 cta1:"Télécharger gratuitement",cta2:"Ajouter une liste avec le téléphone",
 tr1:"Gratuit",tr2:"Sans publicité",tr3:"Aucune collecte de données",tr4:"6 langues",
 alt_tv:"JH IPTV sur une TV : liste des chaînes avec le guide des programmes",alt_ph:"JH IPTV sur un téléphone",alt_guide:"Guide TV en grille de JH IPTV",
-dl_h:"Téléchargez JH IPTV",dl_p:"Déjà disponible sur Android et Windows. D'autres boutiques arrivent.",
+dl_h:"Téléchargez JH IPTV",dl_p:"Déjà disponible sur Windows. Android, Android TV et Smart TV arrivent bientôt.",
 st_gp:"Téléphones, tablettes et Android TV",st_ms:"Ordinateurs Windows 10 et 11",st_lg:"Smart TV LG (webOS)",st_am:"Fire TV et tablettes Fire",st_ap:"iPhone, iPad et Apple TV",
 open:"Ouvrir la boutique",soon:"Bientôt",
 dl_note:"Vous avez une TV Samsung ? <a href=\"#contacto\">Écrivez-nous</a> et nous vous expliquerons comment l'installer.",
@@ -124,9 +127,9 @@ ft_h:"Tout ce qu'il faut pour regarder la TV",ft_p:"Conçue pour la télécomman
 f1:"Guide des programmes",f1s:"Voyez ce qui passe maintenant et ensuite sur chaque chaîne, et le Guide TV en grille.",
 f2:"Retour en arrière et catch-up",f2s:"Revenez en arrière dans le programme en cours et regardez des programmes jusqu'à 7 jours, si votre fournisseur le permet.",
 f3:"Rechercher partout",f3s:"Trouvez chaînes, films, séries et programmes du guide en une seule recherche.",
-f4:"Favoris et rappels",f4s:"Classez vos favoris comme vous voulez et soyez prévenu quand le programme commence.",
-f5:"Plusieurs chaînes à la fois",f5s:"Sous Windows, regardez jusqu'à 4 chaînes côte à côte et choisissez laquelle écouter.",
-f6:"Contrôle parental",f6s:"Protégez des catégories avec un code PIN et masquez les chaînes indésirables.",
+
+
+
 qr_h:"Ajoutez votre liste sans taper avec la télécommande",
 qr_p:"Taper un long lien avec la télécommande, c'est long. Avec JH IPTV, vous tapez tout sur votre téléphone.",
 s1b:"Ouvrez JH IPTV sur la TV",s1s:"Dans « Mes listes », choisissez « Saisir sur le téléphone ».",
@@ -141,7 +144,8 @@ l_name:"Nom",l_mail:"E-mail",l_topic:"Sujet",o_sug:"Suggestion",o_bug:"Problème
 l_dev:"Appareil",d_and:"Android (téléphone/tablette)",d_atv:"Android TV / box",d_lg:"TV LG",d_sam:"TV Samsung",d_oth:"Autre",
 l_msg:"Message",p_msg:"Écrivez votre message ici…",
 fine:"Nous ne demandons ni ne fournissons de listes ou de chaînes. N'envoyez jamais de mot de passe par ce formulaire.",
-send:"Envoyer le message",sending:"Envoi…",ok:"Merci ! Nous avons bien reçu votre message.",err:"Envoi impossible. Réessayez ou écrivez à jhiptv.dev@gmail.com.",need:"Indiquez votre nom, un e-mail valide et votre message."
+send:"Envoyer le message",sending:"Envoi…",ok:"Merci ! Nous avons bien reçu votre message.",err:"Envoi impossible. Réessayez ou écrivez à jhiptv.dev@gmail.com.",need:"Indiquez votre nom, un e-mail valide et votre message.",
+f4:"Enregistrer des programmes",f4s:"Sous Windows, enregistrez ce qui passe ou programmez l'enregistrement depuis le guide. Les vidéos vont dans le dossier Vidéos.",f5:"Organisez à votre façon",f5s:"Triez groupes et favoris comme vous voulez, renommez ou renumérotez les chaînes et masquez celles que vous ne regardez pas.",f6:"Plusieurs chaînes à la fois",f6s:"Sous Windows, regardez jusqu'à 4 chaînes côte à côte et choisissez laquelle écouter.",f7:"Rappels",f7s:"Marquez un programme dans le guide et l'app vous prévient quand il va commencer.",f8:"Contrôle parental",f8s:"Protégez des catégories avec un code PIN et masquez ce que les enfants ne doivent pas voir.",f9:"Du téléphone à la TV",f9s:"Scannez le QR code de la TV avec le téléphone et saisissez votre liste sur le téléphone, sans télécommande."
 },
 de:{
 title:"JH IPTV — IPTV-Player für Android, Windows und Smart TV",
@@ -152,7 +156,7 @@ lead:"JH IPTV öffnet deine M3U-Playlist oder dein Xtream-Codes-Konto mit Progra
 cta1:"Kostenlos herunterladen",cta2:"Playlist mit dem Handy hinzufügen",
 tr1:"Kostenlos",tr2:"Ohne Werbung",tr3:"Keine Datenerfassung",tr4:"6 Sprachen",
 alt_tv:"JH IPTV auf einem Fernseher: Senderliste mit Programmführer",alt_ph:"JH IPTV auf einem Handy",alt_guide:"TV-Guide-Raster von JH IPTV",
-dl_h:"JH IPTV herunterladen",dl_p:"Jetzt für Android und Windows verfügbar. Weitere Stores folgen.",
+dl_h:"JH IPTV herunterladen",dl_p:"Jetzt für Windows verfügbar. Android, Android TV und Smart TVs folgen.",
 st_gp:"Handys, Tablets und Android TV",st_ms:"Computer mit Windows 10 und 11",st_lg:"LG Smart TVs (webOS)",st_am:"Fire TV und Fire-Tablets",st_ap:"iPhone, iPad und Apple TV",
 open:"Store öffnen",soon:"Demnächst",
 dl_note:"Du hast einen Samsung-Fernseher? <a href=\"#contacto\">Schreib uns</a> und wir erklären dir die Installation.",
@@ -160,9 +164,9 @@ ft_h:"Alles, was du zum Fernsehen brauchst",ft_p:"Gemacht für Fernbedienung, Ma
 f1:"Programmführer",f1s:"Sieh, was jetzt und danach auf jedem Sender läuft, dazu der TV-Guide als Raster.",
 f2:"Live-Zurückspulen und Catch-up",f2s:"Spule in der laufenden Sendung zurück und sieh Sendungen bis 7 Tage zurück, wenn dein Anbieter es unterstützt.",
 f3:"Überall suchen",f3s:"Finde Sender, Filme, Serien und Sendungen im Guide mit einer Suche.",
-f4:"Favoriten und Erinnerungen",f4s:"Sortiere Favoriten nach Wunsch und lass dich erinnern, wenn eine Sendung beginnt.",
-f5:"Mehrere Sender gleichzeitig",f5s:"Unter Windows bis zu 4 Sender nebeneinander ansehen und wählen, welchen du hörst.",
-f6:"Kindersicherung",f6s:"Schütze Kategorien mit einer PIN und blende unerwünschte Sender aus.",
+
+
+
 qr_h:"Playlist hinzufügen, ohne mit der Fernbedienung zu tippen",
 qr_p:"Einen langen Link mit der Fernbedienung einzugeben dauert ewig. Mit JH IPTV tippst du alles auf dem Handy.",
 s1b:"Öffne JH IPTV auf dem Fernseher",s1s:"Wähle unter „Meine Playlists“ die Option „Auf dem Handy eingeben“.",
@@ -177,7 +181,8 @@ l_name:"Name",l_mail:"E-Mail",l_topic:"Betreff",o_sug:"Vorschlag",o_bug:"Problem
 l_dev:"Gerät",d_and:"Android (Handy/Tablet)",d_atv:"Android TV / Box",d_lg:"LG-Fernseher",d_sam:"Samsung-Fernseher",d_oth:"Anderes",
 l_msg:"Nachricht",p_msg:"Schreib hier deine Nachricht…",
 fine:"Wir fragen nicht nach Playlists oder Sendern und stellen keine bereit. Sende niemals Passwörter über dieses Formular.",
-send:"Nachricht senden",sending:"Wird gesendet…",ok:"Danke! Wir haben deine Nachricht erhalten.",err:"Senden fehlgeschlagen. Bitte erneut versuchen oder an jhiptv.dev@gmail.com schreiben.",need:"Bitte Name, eine gültige E-Mail und die Nachricht angeben."
+send:"Nachricht senden",sending:"Wird gesendet…",ok:"Danke! Wir haben deine Nachricht erhalten.",err:"Senden fehlgeschlagen. Bitte erneut versuchen oder an jhiptv.dev@gmail.com schreiben.",need:"Bitte Name, eine gültige E-Mail und die Nachricht angeben.",
+f4:"Sendungen aufnehmen",f4s:"Unter Windows aufnehmen, was gerade läuft, oder Aufnahmen im Guide planen. Die Videos landen im Ordner Videos.",f5:"Nach deinem Geschmack ordnen",f5s:"Gruppen und Favoriten beliebig sortieren, Sender umbenennen oder neu nummerieren und nie gesehene ausblenden.",f6:"Mehrere Sender gleichzeitig",f6s:"Unter Windows bis zu 4 Sender nebeneinander ansehen und wählen, welchen du hörst.",f7:"Erinnerungen",f7s:"Markiere eine Sendung im Guide und die App meldet sich, kurz bevor sie beginnt.",f8:"Kindersicherung",f8s:"Schütze Kategorien mit einer PIN und blende aus, was Kinder nicht sehen sollen.",f9:"Vom Handy auf den Fernseher",f9s:"Richte das Handy auf den QR-Code am Fernseher und gib die Playlist am Handy ein, ganz ohne Fernbedienung."
 },
 it:{
 title:"JH IPTV — Lettore IPTV per Android, Windows e Smart TV",
@@ -188,7 +193,7 @@ lead:"JH IPTV apre la tua playlist M3U o il tuo account Xtream Codes con guida a
 cta1:"Scarica gratis",cta2:"Aggiungi la playlist con il telefono",
 tr1:"Gratis",tr2:"Senza pubblicità",tr3:"Nessuna raccolta di dati",tr4:"6 lingue",
 alt_tv:"JH IPTV su una TV: elenco canali con guida ai programmi",alt_ph:"JH IPTV su un telefono",alt_guide:"Guida TV a griglia di JH IPTV",
-dl_h:"Scarica JH IPTV",dl_p:"Già disponibile per Android e Windows. Altri store in arrivo.",
+dl_h:"Scarica JH IPTV",dl_p:"Già disponibile per Windows. Android, Android TV e Smart TV in arrivo.",
 st_gp:"Telefoni, tablet e Android TV",st_ms:"Computer con Windows 10 e 11",st_lg:"Smart TV LG (webOS)",st_am:"Fire TV e tablet Fire",st_ap:"iPhone, iPad e Apple TV",
 open:"Apri lo store",soon:"Prossimamente",
 dl_note:"Hai una TV Samsung? <a href=\"#contacto\">Scrivici</a> e ti spieghiamo come installarla.",
@@ -196,9 +201,9 @@ ft_h:"Tutto ciò che serve per guardare la TV",ft_p:"Pensata per il telecomando,
 f1:"Guida ai programmi",f1s:"Guarda cosa va in onda ora e dopo su ogni canale, più la Guida TV a griglia.",
 f2:"Riavvolgimento e catch-up",f2s:"Torna indietro nel programma che stai guardando e guarda programmi fino a 7 giorni fa, se il tuo fornitore lo consente.",
 f3:"Cerca ovunque",f3s:"Trova canali, film, serie e programmi della guida con una sola ricerca.",
-f4:"Preferiti e promemoria",f4s:"Ordina i preferiti come vuoi e ricevi un avviso quando inizia il programma.",
-f5:"Più canali insieme",f5s:"Su Windows guarda fino a 4 canali affiancati e scegli quale ascoltare.",
-f6:"Controllo parentale",f6s:"Proteggi le categorie con un PIN e nascondi i canali che non vuoi vedere.",
+
+
+
 qr_h:"Aggiungi la playlist senza scrivere con il telecomando",
 qr_p:"Scrivere un link lungo con il telecomando è lento. Con JH IPTV scrivi tutto sul telefono.",
 s1b:"Apri JH IPTV sulla TV",s1s:"In «Le mie playlist», scegli «Scrivi sul telefono».",
@@ -213,6 +218,7 @@ l_name:"Nome",l_mail:"Email",l_topic:"Oggetto",o_sug:"Suggerimento",o_bug:"Probl
 l_dev:"Dispositivo",d_and:"Android (telefono/tablet)",d_atv:"Android TV / box",d_lg:"TV LG",d_sam:"TV Samsung",d_oth:"Altro",
 l_msg:"Messaggio",p_msg:"Scrivi qui il tuo messaggio…",
 fine:"Non chiediamo né forniamo playlist o canali. Non inviare mai password tramite questo modulo.",
-send:"Invia messaggio",sending:"Invio…",ok:"Grazie! Abbiamo ricevuto il tuo messaggio.",err:"Invio non riuscito. Riprova o scrivi a jhiptv.dev@gmail.com.",need:"Inserisci nome, un'email valida e il messaggio."
+send:"Invia messaggio",sending:"Invio…",ok:"Grazie! Abbiamo ricevuto il tuo messaggio.",err:"Invio non riuscito. Riprova o scrivi a jhiptv.dev@gmail.com.",need:"Inserisci nome, un'email valida e il messaggio.",
+f4:"Registra i programmi",f4s:"Su Windows, registra ciò che va in onda o programma la registrazione dalla guida. I video finiscono nella cartella Video.",f5:"Organizza a modo tuo",f5s:"Ordina gruppi e preferiti come vuoi, rinomina o rinumera i canali e nascondi quelli che non guardi.",f6:"Più canali insieme",f6s:"Su Windows guarda fino a 4 canali affiancati e scegli quale ascoltare.",f7:"Promemoria",f7s:"Segna un programma nella guida e l'app ti avvisa quando sta per iniziare.",f8:"Controllo parentale",f8s:"Proteggi le categorie con un PIN e nascondi ciò che i bambini non devono vedere.",f9:"Dal telefono alla TV",f9s:"Inquadra il codice QR della TV con il telefono e scrivi la playlist sul telefono, senza telecomando."
 }
 };
