@@ -74,3 +74,23 @@ function jhReveal(sel){
   els.forEach(function(e){io.observe(e)});
 }
 (function(){var go=function(){jhFlagPicker()};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go()})();
+
+/* ===== v3: efeitos modernos (barra de progresso, cabeçalho, inclinação 3D, luz que segue o rato, contadores) ===== */
+function jhModern(){
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches,fine=window.matchMedia&&matchMedia("(pointer:fine)").matches;
+  var top=document.querySelector(".top"),bar=document.getElementById("sprog"),tick=false;
+  function onS(){tick=false;var y=window.scrollY||0,h=document.documentElement.scrollHeight-innerHeight;if(bar)bar.style.transform="scaleX("+(h>0?Math.min(1,y/h):0)+")";if(top)top.classList.toggle("scrolled",y>40)}
+  addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(onS)}},{passive:true});onS();
+  /* contadores */
+  var cs=[].slice.call(document.querySelectorAll("[data-cnt]"));
+  function run(e){var n=+e.getAttribute("data-cnt"),txt=e.getAttribute("data-txt");if(reduce||!n){e.textContent=txt||n;return}var t0=null;function st(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1200),v=Math.round(n*(1-Math.pow(1-k,3)));e.textContent=v;if(k<1)requestAnimationFrame(st);else e.textContent=txt||n}requestAnimationFrame(st)}
+  if("IntersectionObserver" in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){run(x.target);io.unobserve(x.target)}})},{threshold:.6});cs.forEach(function(e){io.observe(e)})}else cs.forEach(run);
+  if(reduce||!fine)return;
+  /* inclinação 3D do palco do herói */
+  var st=document.querySelector(".stage");
+  if(st){st.addEventListener("mousemove",function(e){var r=st.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;st.style.setProperty("--rx",(-y*6).toFixed(2)+"deg");st.style.setProperty("--ry",(x*8).toFixed(2)+"deg")});st.addEventListener("mouseleave",function(){st.style.setProperty("--rx","0deg");st.style.setProperty("--ry","0deg")})}
+  /* luz que segue o rato nos cartões */
+  [].forEach.call(document.querySelectorAll(".feat .f,.store,.qa,.plat li,.stat"),function(c){c.classList.add("glowc");c.addEventListener("mousemove",function(e){var r=c.getBoundingClientRect();c.style.setProperty("--mx",(e.clientX-r.left)+"px");c.style.setProperty("--my",(e.clientY-r.top)+"px")})});
+  /* botões "magnéticos" */
+  [].forEach.call(document.querySelectorAll(".hero2 .btn"),function(b){b.addEventListener("mousemove",function(e){var r=b.getBoundingClientRect();b.style.transform="translate("+((e.clientX-r.left-r.width/2)*.12).toFixed(1)+"px,"+((e.clientY-r.top-r.height/2)*.2).toFixed(1)+"px)"});b.addEventListener("mouseleave",function(){b.style.transform=""})});
+}

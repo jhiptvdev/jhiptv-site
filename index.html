@@ -40,6 +40,7 @@
   <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" fill="currentColor"/></symbol>
 </svg>
 
+<div class="sprog" id="sprog"></div><div class="bgfx" aria-hidden="true"><i class="o1"></i><i class="o2"></i><i class="o3"></i></div>
 <div class="ann"><div class="wrap"><svg><use href="#i-spark"/></svg><span data-i="ann"></span><a href="#b3"><span data-i="ann_go"></span> →</a></div></div>
 <header class="top">
   <div class="wrap">
@@ -86,6 +87,15 @@
   </section>
 
   <div class="marq" aria-hidden="true"><div class="mq-t" id="mqT"></div></div>
+
+  <section class="stats">
+    <div class="wrap">
+      <div class="stat"><b data-cnt="6">0</b><span data-i="st1"></span></div>
+      <div class="stat"><b data-cnt="4">0</b><span data-i="st2"></span></div>
+      <div class="stat"><b data-cnt="7">0</b><span data-i="st3"></span></div>
+      <div class="stat"><b data-cnt="0" data-txt="0 €">0</b><span data-i="st4"></span></div>
+    </div>
+  </section>
 
   <section class="plat" id="plataformas">
     <div class="wrap"><h2 data-i="plat_h"></h2><ul><li><svg><use href="#i-monitor"/></svg><span>Windows</span></li><li><svg><use href="#i-phone"/></svg><span>Android</span></li><li><svg><use href="#i-tv"/></svg><span>Android TV</span></li><li><svg><use href="#i-stick"/></svg><span>Fire TV</span></li><li><svg><use href="#i-tv"/></svg><span>LG webOS</span></li><li><svg><use href="#i-tv"/></svg><span>Samsung Tizen</span></li></ul></div>
@@ -258,7 +268,8 @@
     if(!el)return;el.innerHTML=rows.map(function(r,i){return'<div class="cr'+(r[2]?" on":"")+'" style="--k:'+i+'"><span>'+jhFlag(FL[r[0]])+r[0]+' | '+r[1]+'</span><i></i></div>'}).join("");
     var n=document.getElementById("catN");if(n)n.textContent="3 / 248"};
   jhInit(I18N_INDEX);
-  jhReveal(".alt .txt,.alt .media,.plat h2,.plat li,.feat .f,.stores .store,.qa,.sec-h,.qr .wrap>div,.contact .wrap>*,.legal .box,.foot2 .fcol");
+  jhModern();
+  jhReveal(".stats .stat,.alt .txt,.alt .media,.plat h2,.plat li,.feat .f,.stores .store,.qa,.sec-h,.qr .wrap>div,.contact .wrap>*,.legal .box,.foot2 .fcol");
   try{var q=qrcode(0,"M");q.addData("https://"+location.host+"/tv");q.make();document.getElementById("demoQr").innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true})}catch(e){}
   var f=document.getElementById("ctForm"),msg=document.getElementById("ctMsg"),btn=document.getElementById("ctSend");
   function show(t,k){msg.textContent=t;msg.className="msg "+k}
