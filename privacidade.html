@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>JH IPTV</title>
+<meta name="description" content="">
+<meta name="theme-color" content="#0A0E1C">
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo.svg" alt="" width="36" height="36"><span>JH <b>IPTV</b></span></a>
+    <nav class="nav" aria-label="Menu"><a href="/" data-i="foot_home">Início</a><a href="/#descarregar" data-i="nav_dl">Descarregar</a><a href="/#contacto" data-i="nav_ct">Contacto</a></nav>
+    <div class="lang"><select id="langSel" aria-label="Idioma / Language">
+      <option value="pt">Português</option><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="it">Italiano</option>
+    </select></div>
+  </div>
+</header>
+<main class="doc" id="doc"></main>
+<footer>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo.svg" alt="" width="30" height="30"><span>JH <b>IPTV</b></span></a>
+    <span>© 2026 JH IPTV</span>
+    <nav aria-label="Links"><a href="/privacidade" data-i="foot_priv"></a><a href="/termos" data-i="foot_terms"></a><a href="/#contacto" data-i="foot_ct"></a></nav>
+  </div>
+</footer>
+<script src="/site.js"></script>
+<script src="/i18n-privacy.js"></script>
+<script>
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+window.jhOnLang=function(l){var d=I18N_PRIV[l]||I18N_PRIV.en;document.getElementById("doc").innerHTML="<h1>"+esc(d.h)+"</h1><p class=\"upd\">"+esc(d.upd)+"</p><p class=\"lead\">"+esc(d.lead)+"</p><ol>"+d.items.map(function(i){return"<li><h2>"+esc(i[0])+"</h2><p>"+esc(i[1]).replace("jhiptv.dev@gmail.com","<a href=\"mailto:jhiptv.dev@gmail.com\">jhiptv.dev@gmail.com</a>")+"</p></li>"}).join("")+"</ol>"};
+var T={};for(var k in I18N_PRIV)T[k]={title:I18N_PRIV[k].title,desc:I18N_PRIV[k].lead};jhInit(T);
+</script>
+</body>
+</html>

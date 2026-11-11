@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>JH IPTV</title>
+<meta name="theme-color" content="#0A0E1C">
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo.svg" alt="" width="36" height="36"><span>JH <b>IPTV</b></span></a>
+    <div class="lang"><select id="langSel" aria-label="Idioma / Language">
+      <option value="pt">Português</option><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="it">Italiano</option>
+    </select></div>
+  </div>
+</header>
+
+<main class="pair">
+  <!-- 1) código -->
+  <div id="vCode" hidden>
+    <h1 data-i="h"></h1>
+    <p class="lead" data-i="help"></p>
+    <form class="card" id="codeForm" novalidate>
+      <label><span data-i="code_l"></span><input id="codeIn" class="codein" maxlength="14" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="XXXX-XXXX-XXXX" inputmode="text"></label>
+      <button class="btn primary" type="submit" data-i="code_btn"></button>
+      <div class="msg" id="codeMsg" role="status"></div>
+    </form>
+  </div>
+
+  <!-- 2) dados da lista -->
+  <div id="vForm" hidden>
+    <h1 data-i="h"></h1>
+    <p class="lead" data-i="lead"></p>
+    <div class="tvcode">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="12.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 2.5l3 2.5 3-2.5M7 20.5h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><small data-i="linked"></small><b id="codeShow"></b></div>
+      <button type="button" id="chg" data-i="change"></button>
+    </div>
+    <form class="card" id="listForm" novalidate autocomplete="off">
+      <div class="seg" role="group">
+        <button type="button" id="tX" aria-pressed="true">Xtream Codes</button>
+        <button type="button" id="tM" aria-pressed="false" data-i="tab_m"></button>
+      </div>
+      <label><span data-i="f_name"></span><input id="fName" maxlength="40" data-ip="p_name"></label>
+      <div id="xF" style="display:grid;gap:16px">
+        <label><span data-i="f_srv"></span><input id="fServer" type="url" inputmode="url" autocapitalize="off" spellcheck="false" placeholder="http://servidor.com:8080"></label>
+        <label><span data-i="f_user"></span><input id="fUser" autocapitalize="off" spellcheck="false"></label>
+        <label><span data-i="f_pass"></span><span class="pw"><input id="fPass" type="password" autocapitalize="off" spellcheck="false" autocomplete="off"><button type="button" id="pwT" data-i="show"></button></span></label>
+      </div>
+      <div id="mF" style="display:none;gap:16px">
+        <label><span data-i="f_m3u"></span><input id="fM3u" type="url" inputmode="url" autocapitalize="off" spellcheck="false" placeholder="http://…/get.php?username=…"></label>
+        <label><span data-i="f_epg"></span><input id="fEpg" type="url" inputmode="url" autocapitalize="off" spellcheck="false" placeholder="http://…/xmltv.php?…"></label>
+      </div>
+      <button class="btn primary" type="submit" id="sendBtn"><span data-i="send"></span></button>
+      <div class="msg" id="formMsg" role="status" aria-live="polite"></div>
+      <p class="fine" data-i="foot"></p>
+    </form>
+  </div>
+
+  <!-- 3) enviado -->
+  <div id="vDone" class="done" hidden>
+    <div class="big"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <h1 data-i="done_h"></h1>
+    <p class="lead" data-i="done_p" style="margin:0 auto 26px"></p>
+    <button class="btn" type="button" id="again" data-i="again"></button>
+  </div>
+</main>
+
+<script src="/site.js"></script>
+<script src="/nacl.min.js"></script>
+<script src="/pair.js"></script>
+<script>
+var I18N_TV={
+pt:{title:"Enviar lista para a TV — JH IPTV",h:"Enviar a lista para a TV",lead:"Escreva aqui os dados da sua lista. São cifrados no telemóvel e só a sua TV os consegue ler.",
+help:"Na JH IPTV da TV, abra «As minhas listas» e escolha «Escrever no telemóvel». Depois aponte a câmara ao código QR ou escreva aqui o código que aparece na TV.",
+code_l:"Código mostrado na TV",code_btn:"Continuar",code_err:"O código tem 12 letras e números. Confira na TV.",linked:"Ligado à TV com o código",change:"Mudar",
+tab_m:"Link M3U",f_name:"Nome da lista",p_name:"Ex.: Casa",f_srv:"Servidor",f_user:"Utilizador",f_pass:"Palavra-passe",show:"Mostrar",hide:"Esconder",f_m3u:"Link M3U",f_epg:"Link EPG (opcional)",
+send:"Enviar para a TV",sending:"A enviar…",e_x:"Preencha o servidor, o utilizador e a palavra-passe.",e_m:"Escreva o link M3U completo (começa por http).",e_net:"Não foi possível enviar. Verifique a internet e tente outra vez.",
+done_h:"Enviado!",done_p:"Olhe para a TV: os dados já lá estão. Confirme e carregue em «Adicionar e entrar».",again:"Enviar outra vez",
+foot:"Os dados passam cifrados por um serviço de mensagens (ntfy.sh) e são apagados automaticamente. Não ficam guardados neste site."},
+en:{title:"Send a playlist to your TV — JH IPTV",h:"Send your playlist to the TV",lead:"Type your playlist details here. They're encrypted on your phone and only your TV can read them.",
+help:"In JH IPTV on your TV, open “My playlists” and choose “Type on my phone”. Then point your camera at the QR code or type the code shown on the TV here.",
+code_l:"Code shown on the TV",code_btn:"Continue",code_err:"The code has 12 letters and numbers. Check it on the TV.",linked:"Linked to the TV with code",change:"Change",
+tab_m:"M3U link",f_name:"Playlist name",p_name:"E.g. Home",f_srv:"Server",f_user:"Username",f_pass:"Password",show:"Show",hide:"Hide",f_m3u:"M3U link",f_epg:"EPG link (optional)",
+send:"Send to TV",sending:"Sending…",e_x:"Fill in the server, username and password.",e_m:"Type the full M3U link (starts with http).",e_net:"Couldn't send. Check your internet connection and try again.",
+done_h:"Sent!",done_p:"Look at your TV: the details are already there. Confirm and press “Add and sign in”.",again:"Send again",
+foot:"Your details travel encrypted through a messaging service (ntfy.sh) and are deleted automatically. Nothing is stored on this website."},
+es:{title:"Enviar lista a la TV — JH IPTV",h:"Enviar la lista a la TV",lead:"Escribe aquí los datos de tu lista. Se cifran en el móvil y solo tu TV puede leerlos.",
+help:"En JH IPTV de la TV, abre «Mis listas» y elige «Escribir en el móvil». Después apunta la cámara al código QR o escribe aquí el código que aparece en la TV.",
+code_l:"Código que aparece en la TV",code_btn:"Continuar",code_err:"El código tiene 12 letras y números. Compruébalo en la TV.",linked:"Conectado a la TV con el código",change:"Cambiar",
+tab_m:"Enlace M3U",f_name:"Nombre de la lista",p_name:"Ej.: Casa",f_srv:"Servidor",f_user:"Usuario",f_pass:"Contraseña",show:"Mostrar",hide:"Ocultar",f_m3u:"Enlace M3U",f_epg:"Enlace EPG (opcional)",
+send:"Enviar a la TV",sending:"Enviando…",e_x:"Rellena el servidor, el usuario y la contraseña.",e_m:"Escribe el enlace M3U completo (empieza por http).",e_net:"No se pudo enviar. Comprueba internet e inténtalo de nuevo.",
+done_h:"¡Enviado!",done_p:"Mira la TV: los datos ya están allí. Confirma y pulsa «Añadir y entrar».",again:"Enviar otra vez",
+foot:"Los datos viajan cifrados por un servicio de mensajes (ntfy.sh) y se borran automáticamente. No se guardan en este sitio."},
+fr:{title:"Envoyer une liste à la TV — JH IPTV",h:"Envoyer la liste à la TV",lead:"Saisissez ici les données de votre liste. Elles sont chiffrées sur le téléphone et seule votre TV peut les lire.",
+help:"Dans JH IPTV sur la TV, ouvrez « Mes listes » et choisissez « Saisir sur le téléphone ». Puis scannez le QR code ou saisissez ici le code affiché sur la TV.",
+code_l:"Code affiché sur la TV",code_btn:"Continuer",code_err:"Le code comporte 12 lettres et chiffres. Vérifiez-le sur la TV.",linked:"Relié à la TV avec le code",change:"Changer",
+tab_m:"Lien M3U",f_name:"Nom de la liste",p_name:"Ex. : Maison",f_srv:"Serveur",f_user:"Utilisateur",f_pass:"Mot de passe",show:"Afficher",hide:"Masquer",f_m3u:"Lien M3U",f_epg:"Lien EPG (facultatif)",
+send:"Envoyer à la TV",sending:"Envoi…",e_x:"Indiquez le serveur, l'utilisateur et le mot de passe.",e_m:"Saisissez le lien M3U complet (commence par http).",e_net:"Envoi impossible. Vérifiez la connexion et réessayez.",
+done_h:"Envoyé !",done_p:"Regardez la TV : les données y sont déjà. Confirmez et appuyez sur « Ajouter et se connecter ».",again:"Envoyer à nouveau",
+foot:"Vos données transitent chiffrées par un service de messagerie (ntfy.sh) et sont effacées automatiquement. Rien n'est enregistré sur ce site."},
+de:{title:"Playlist an den Fernseher senden — JH IPTV",h:"Playlist an den Fernseher senden",lead:"Gib hier die Daten deiner Playlist ein. Sie werden auf dem Handy verschlüsselt und nur dein Fernseher kann sie lesen.",
+help:"Öffne in JH IPTV auf dem Fernseher „Meine Playlists“ und wähle „Auf dem Handy eingeben“. Scanne dann den QR-Code oder gib hier den Code vom Fernseher ein.",
+code_l:"Code auf dem Fernseher",code_btn:"Weiter",code_err:"Der Code hat 12 Buchstaben und Ziffern. Bitte am Fernseher prüfen.",linked:"Mit dem Fernseher verbunden, Code",change:"Ändern",
+tab_m:"M3U-Link",f_name:"Name der Playlist",p_name:"z. B. Zuhause",f_srv:"Server",f_user:"Benutzername",f_pass:"Passwort",show:"Anzeigen",hide:"Verbergen",f_m3u:"M3U-Link",f_epg:"EPG-Link (optional)",
+send:"An den Fernseher senden",sending:"Wird gesendet…",e_x:"Bitte Server, Benutzername und Passwort angeben.",e_m:"Gib den vollständigen M3U-Link ein (beginnt mit http).",e_net:"Senden fehlgeschlagen. Prüfe die Internetverbindung und versuch es erneut.",
+done_h:"Gesendet!",done_p:"Schau auf den Fernseher: Die Daten sind schon da. Bestätige und drücke „Hinzufügen und anmelden“.",again:"Erneut senden",
+foot:"Deine Daten laufen verschlüsselt über einen Nachrichtendienst (ntfy.sh) und werden automatisch gelöscht. Auf dieser Website wird nichts gespeichert."},
+it:{title:"Invia la playlist alla TV — JH IPTV",h:"Invia la playlist alla TV",lead:"Scrivi qui i dati della tua playlist. Vengono cifrati sul telefono e solo la tua TV può leggerli.",
+help:"In JH IPTV sulla TV, apri «Le mie playlist» e scegli «Scrivi sul telefono». Poi inquadra il codice QR o scrivi qui il codice mostrato sulla TV.",
+code_l:"Codice mostrato sulla TV",code_btn:"Continua",code_err:"Il codice ha 12 lettere e numeri. Controllalo sulla TV.",linked:"Collegato alla TV con il codice",change:"Cambia",
+tab_m:"Link M3U",f_name:"Nome della playlist",p_name:"Es.: Casa",f_srv:"Server",f_user:"Nome utente",f_pass:"Password",show:"Mostra",hide:"Nascondi",f_m3u:"Link M3U",f_epg:"Link EPG (facoltativo)",
+send:"Invia alla TV",sending:"Invio…",e_x:"Inserisci server, nome utente e password.",e_m:"Scrivi il link M3U completo (inizia con http).",e_net:"Invio non riuscito. Controlla la connessione e riprova.",
+done_h:"Inviato!",done_p:"Guarda la TV: i dati sono già lì. Conferma e premi «Aggiungi ed entra».",again:"Invia di nuovo",
+foot:"I dati viaggiano cifrati tramite un servizio di messaggi (ntfy.sh) e vengono cancellati automaticamente. Nulla viene salvato su questo sito."}
+};
+(function(){
+  var $=function(i){return document.getElementById(i)},code="",tab="x";
+  jhInit(I18N_TV);
+  function view(v){["vCode","vForm","vDone"].forEach(function(k){$(k).hidden=k!==v});window.scrollTo(0,0)}
+  function msg(id,t){var m=$(id);m.textContent=t||"";m.className=t?"msg err":"msg"}
+  function useCode(c){code=JHPAIR.norm(c);$("codeShow").textContent=JHPAIR.fmt(code);view("vForm");setTimeout(function(){$("fName").focus()},50)}
+  function setTab(t){tab=t;$("tX").setAttribute("aria-pressed",t==="x");$("tM").setAttribute("aria-pressed",t==="m");$("xF").style.display=t==="x"?"grid":"none";$("mF").style.display=t==="m"?"grid":"none";msg("formMsg","")}
+  $("tX").onclick=function(){setTab("x")};$("tM").onclick=function(){setTab("m")};
+  window.jhOnLang=function(){$("pwT").textContent=jt($("fPass").type==="password"?"show":"hide")};
+  $("pwT").onclick=function(){var p=$("fPass");p.type=p.type==="password"?"text":"password";window.jhOnLang()};
+  /* código vindo do QR (#XXXX…) — fica só no telemóvel; o "#" nunca é enviado ao servidor */
+  var h=decodeURIComponent((location.hash||"").slice(1));
+  if(h&&JHPAIR.valid(h)){useCode(h);try{history.replaceState(null,"",location.pathname)}catch(e){}}else view("vCode");
+  $("codeForm").onsubmit=function(e){e.preventDefault();var v=$("codeIn").value;if(!JHPAIR.valid(v)){msg("codeMsg",jt("code_err"));return}msg("codeMsg","");useCode(v)};
+  $("codeIn").addEventListener("input",function(){var c=JHPAIR.norm(this.value).slice(0,12),o=c.replace(/(.{4})(?=.)/g,"$1-");if(o!==this.value)this.value=o});
+  $("chg").onclick=function(){code="";$("codeIn").value="";view("vCode");$("codeIn").focus()};
+  $("again").onclick=function(){view("vForm")};
+  function fixUrl(u){u=u.trim();if(u&&!/^https?:\/\//i.test(u))u="http://"+u;return u.replace(/\s+/g,"")}
+  $("listForm").onsubmit=function(e){
+    e.preventDefault();
+    var o={v:1,t:Date.now(),name:$("fName").value.trim()};
+    if(tab==="x"){o.type="xtream";o.server=fixUrl($("fServer").value).replace(/\/+$/,"");o.user=$("fUser").value.trim();o.pass=$("fPass").value;
+      if(!/^https?:\/\/[^\s/]+/i.test(o.server)||!o.user||!o.pass){msg("formMsg",jt("e_x"));return}}
+    else{o.type="m3u";o.url=fixUrl($("fM3u").value);o.epg=fixUrl($("fEpg").value);
+      if(!/^https?:\/\/\S+\.\S+/i.test(o.url)){msg("formMsg",jt("e_m"));return}}
+    var b=$("sendBtn");b.disabled=true;b.firstChild.textContent=jt("sending");msg("formMsg","");
+    var body;try{body=JHPAIR.seal(code,o)}catch(x){msg("formMsg",jt("e_net"));b.disabled=false;b.firstChild.textContent=jt("send");return}
+    fetch(JHPAIR.topicUrl(code),{method:"POST",body:body,cache:"no-store",referrerPolicy:"no-referrer"})
+      .then(function(r){if(!r.ok)throw 0;$("fPass").value="";view("vDone")},function(){msg("formMsg",jt("e_net"))})
+      .catch(function(){msg("formMsg",jt("e_net"))})
+      .then(function(){b.disabled=false;b.firstChild.textContent=jt("send")});
+  };
+})();
+</script>
+</body>
+</html>

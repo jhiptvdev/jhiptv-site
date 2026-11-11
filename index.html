@@ -6,10 +6,10 @@
 <title>JH IPTV</title>
 <meta name="description" content="">
 <meta name="theme-color" content="#0A0E1C">
-<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/site.css">
 <meta property="og:title" content="JH IPTV">
-<meta property="og:image" content="/img/en-tv-live.webp">
+<meta property="og:image" content="/en-tv-live.webp">
 </head>
 <body>
 <a class="skip" href="#main" data-i="skip">Saltar para o conteúdo</a>
@@ -34,7 +34,7 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="36" height="36"><span>JH <b>IPTV</b></span></a>
+    <a class="brand" href="/"><img src="/logo.svg" alt="" width="36" height="36"><span>JH <b>IPTV</b></span></a>
     <nav class="nav" aria-label="Menu">
       <a href="#funcionalidades" data-i="nav_feat">Funcionalidades</a>
       <a href="#descarregar" data-i="nav_dl">Descarregar</a>
@@ -66,8 +66,8 @@
         </ul>
       </div>
       <div class="shots">
-        <img class="tv" data-src="/img/{l}-tv-live.webp" src="/img/pt-tv-live.webp" alt="" data-ialt="alt_tv" width="1280" height="720">
-        <img class="ph" data-src="/img/{l}-phone-live.webp" src="/img/pt-phone-live.webp" alt="" data-ialt="alt_ph" width="540" height="960" loading="lazy">
+        <img class="tv" data-src="/{l}-tv-live.webp" src="/pt-tv-live.webp" alt="" data-ialt="alt_tv" width="1280" height="720">
+        <img class="ph" data-src="/{l}-phone-live.webp" src="/pt-phone-live.webp" alt="" data-ialt="alt_ph" width="540" height="960" loading="lazy">
       </div>
     </div>
   </section>
@@ -117,7 +117,7 @@
         <div class="f"><span class="ic"><svg><use href="#i-grid"/></svg></span><h3 data-i="f5"></h3><p data-i="f5s"></p></div>
         <div class="f"><span class="ic"><svg><use href="#i-lock"/></svg></span><h3 data-i="f6"></h3><p data-i="f6s"></p></div>
       </div>
-      <img class="guide" data-src="/img/{l}-tv-guide.webp" src="/img/pt-tv-guide.webp" alt="" data-ialt="alt_guide" width="1280" height="720" loading="lazy">
+      <img class="guide" data-src="/{l}-tv-guide.webp" src="/pt-tv-guide.webp" alt="" data-ialt="alt_guide" width="1280" height="720" loading="lazy">
     </div>
   </section>
 
@@ -131,7 +131,7 @@
           <li><div><b data-i="s2b"></b><span data-i="s2s"></span></div></li>
           <li><div><b data-i="s3b"></b><span data-i="s3s"></span></div></li>
         </ol>
-        <a class="btn primary" href="/tv/"><svg><use href="#i-qr"/></svg><span data-i="qr_btn"></span></a>
+        <a class="btn primary" href="/tv"><svg><use href="#i-qr"/></svg><span data-i="qr_btn"></span></a>
         <div class="lock"><svg><use href="#i-lock"/></svg><span data-i="lock"></span></div>
       </div>
       <div class="demo" aria-hidden="true">
@@ -179,24 +179,24 @@
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="30" height="30"><span>JH <b>IPTV</b></span></a>
+    <a class="brand" href="/"><img src="/logo.svg" alt="" width="30" height="30"><span>JH <b>IPTV</b></span></a>
     <span>© 2026 JH IPTV</span>
     <nav aria-label="Links">
-      <a href="/privacidade/" data-i="foot_priv"></a>
-      <a href="/termos/" data-i="foot_terms"></a>
+      <a href="/privacidade" data-i="foot_priv"></a>
+      <a href="/termos" data-i="foot_terms"></a>
       <a href="#contacto" data-i="foot_ct"></a>
     </nav>
   </div>
 </footer>
 
-<script src="/assets/site.js"></script>
-<script src="/assets/qrcode.js"></script>
-<script src="/assets/i18n-index.js"></script>
+<script src="/site.js"></script>
+<script src="/qrcode.js"></script>
+<script src="/i18n-index.js"></script>
 <script>
 (function(){
   var CONTACT="jhiptv.dev@gmail.com";
   jhInit(I18N_INDEX);
-  try{var q=qrcode(0,"M");q.addData("https://"+location.host+"/tv/");q.make();document.getElementById("demoQr").innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true})}catch(e){}
+  try{var q=qrcode(0,"M");q.addData("https://"+location.host+"/tv");q.make();document.getElementById("demoQr").innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true})}catch(e){}
   var f=document.getElementById("ctForm"),msg=document.getElementById("ctMsg"),btn=document.getElementById("ctSend");
   function show(t,k){msg.textContent=t;msg.className="msg "+k}
   f.addEventListener("submit",function(e){
