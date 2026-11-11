@@ -36,45 +36,126 @@
   <symbol id="i-reload" viewBox="0 0 24 24"><path d="M20 12a8 8 0 11-2.3-5.6M20 4v4.5h-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-upd" viewBox="0 0 24 24"><path d="M12 3v11M7.5 9.5L12 14l4.5-4.5M4 16.5V19a1.5 1.5 0 001.5 1.5h13A1.5 1.5 0 0020 19v-2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-qr" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM18 14h3M14 18v3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" fill="currentColor"/></symbol>
 </svg>
 
+<div class="ann"><div class="wrap"><svg><use href="#i-spark"/></svg><span data-i="ann"></span><a href="#b3"><span data-i="ann_go"></span> →</a></div></div>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="/"><img src="/logo.svg" alt="" width="36" height="36"><span>JH <b>IPTV</b></span></a>
     <nav class="nav" aria-label="Menu">
       <a href="#funcionalidades" data-i="nav_feat">Funcionalidades</a>
-      <a href="#descarregar" data-i="nav_dl">Descarregar</a>
+      <a href="#plataformas" data-i="nav_plat">Plataformas</a>
       <a href="#telemovel" data-i="nav_qr">Telemóvel → TV</a>
+      <a href="#faq" data-i="nav_faq">Perguntas</a>
       <a href="#contacto" data-i="nav_ct">Contacto</a>
     </nav>
     <div class="lang"><select id="langSel" aria-label="Idioma / Language">
       <option value="pt">Português</option><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="it">Italiano</option>
     </select></div>
+    <a class="btn primary sm" href="#descarregar" data-i="cta_top">Descarregar</a>
   </div>
 </header>
 
 <main id="main">
-  <section class="hero">
+  <section class="hero2">
+    <div class="wrap">
+      <p class="eyebrow" data-i="eyebrow">Leitor IPTV para todos os ecrãs</p>
+      <h1 data-ih="h1">A sua televisão, <em>simples e rápida</em>, em todos os ecrãs.</h1>
+      <p class="lead" data-i="lead"></p>
+      <div class="ctas">
+        <a class="btn primary" href="#descarregar"><span data-i="cta1">Descarregar grátis</span><svg><use href="#i-arrow"/></svg></a>
+        <a class="btn" href="#telemovel"><svg><use href="#i-qr"/></svg><span data-i="cta2"></span></a>
+      </div>
+      <ul class="trust">
+        <li><svg><use href="#i-check"/></svg><span data-i="tr1">Grátis</span></li>
+        <li><svg><use href="#i-check"/></svg><span data-i="tr2"></span></li>
+        <li><svg><use href="#i-check"/></svg><span data-i="tr3"></span></li>
+        <li><svg><use href="#i-check"/></svg><span data-i="tr4"></span></li>
+      </ul>
+      <div class="stage">
+        <div class="tvf"><img data-src="/{l}-tv-live.webp" src="/pt-tv-live.webp" alt="" data-ialt="alt_tv" width="1280" height="720"></div>
+        <div class="phf"><img data-src="/{l}-phone-live.webp" src="/pt-phone-live.webp" alt="" data-ialt="alt_ph" width="540" height="960" loading="lazy"></div>
+        <span class="bdg b1"><svg><use href="#i-cc"/></svg><span data-i="bd1"></span></span>
+        <span class="bdg b2"><svg><use href="#i-grid"/></svg><span data-i="bd2"></span></span>
+        <span class="bdg b3"><svg><use href="#i-guide"/></svg><span data-i="bd3"></span></span>
+      </div>
+      <p class="cap" data-i="hero_cap"></p>
+    </div>
+  </section>
+
+  <section class="plat" id="plataformas">
+    <div class="wrap"><h2 data-i="plat_h"></h2><ul><li><svg><use href="#i-monitor"/></svg><span>Windows</span></li><li><svg><use href="#i-phone"/></svg><span>Android</span></li><li><svg><use href="#i-tv"/></svg><span>Android TV</span></li><li><svg><use href="#i-stick"/></svg><span>Fire TV</span></li><li><svg><use href="#i-tv"/></svg><span>LG webOS</span></li><li><svg><use href="#i-tv"/></svg><span>Samsung Tizen</span></li></ul></div>
+  </section>
+
+  <div id="funcionalidades"></div>
+  <section class="alt" id="b1">
+    <div class="wrap">
+      <div class="txt"><p class="eyebrow" data-i="b1_e"></p><h2 data-i="b1_h"></h2><p class="lead" data-i="b1_p"></p></div>
+      <div class="media"><div class="frame"><img data-src="/{l}-tv-guide.webp" src="/pt-tv-guide.webp" alt="" width="1280" height="720" loading="lazy"></div></div>
+    </div>
+  </section>
+  <section class="alt rev" id="b2">
+    <div class="wrap">
+      <div class="txt"><p class="eyebrow" data-i="b2_e"></p><h2 data-i="b2_h"></h2><p class="lead" data-i="b2_p"></p></div>
+      <div class="media"><div class="frame"><img data-src="/{l}-multi.webp" src="/pt-multi.webp" alt="" width="1280" height="720" loading="lazy"></div></div>
+    </div>
+  </section>
+  <section class="alt" id="b3">
+    <div class="wrap">
+      <div class="txt"><p class="eyebrow" data-i="b3_e"></p><h2 data-i="b3_h"></h2><p class="lead" data-i="b3_p"></p></div>
+      <div class="media"><div class="frame"><img data-src="/{l}-subs.webp" src="/pt-subs.webp" alt="" width="1280" height="720" loading="lazy"></div></div>
+    </div>
+  </section>
+  <section class="alt rev" id="b4">
+    <div class="wrap">
+      <div class="txt"><p class="eyebrow" data-i="b4_e"></p><h2 data-i="b4_h"></h2><p class="lead" data-i="b4_p"></p></div>
+      <div class="media"><div class="catmock"><div class="cm-top"><span class="cm-q" data-i="b4_q"></span></div><div class="cm-btns"><span data-i="b4_l1"></span><span class="on" data-i="b4_l2"></span></div><div id="catRows"></div><div class="cm-n" id="catN"></div></div></div>
+    </div>
+  </section>
+<section id="telemovel" class="qr alt2">
     <div class="wrap">
       <div>
-        <p class="eyebrow" data-i="eyebrow">Leitor IPTV para todos os ecrãs</p>
-        <h1 data-ih="h1">A sua televisão, <em>simples e rápida</em>, em todos os ecrãs.</h1>
-        <p class="lead" data-i="lead"></p>
-        <div class="ctas">
-          <a class="btn primary" href="#descarregar"><span data-i="cta1">Descarregar grátis</span><svg><use href="#i-arrow"/></svg></a>
-          <a class="btn" href="#telemovel"><svg><use href="#i-qr"/></svg><span data-i="cta2"></span></a>
+        <h2 data-i="qr_h"></h2>
+        <p class="lead" style="margin:0" data-i="qr_p"></p>
+        <ol class="steps">
+          <li><div><b data-i="s1b"></b><span data-i="s1s"></span></div></li>
+          <li><div><b data-i="s2b"></b><span data-i="s2s"></span></div></li>
+          <li><div><b data-i="s3b"></b><span data-i="s3s"></span></div></li>
+        </ol>
+        <a class="btn primary" href="/tv"><svg><use href="#i-qr"/></svg><span data-i="qr_btn"></span></a>
+        <div class="lock"><svg><use href="#i-lock"/></svg><span data-i="lock"></span></div>
+      </div>
+      <div class="demo" aria-hidden="true">
+        <div class="scr">
+          <div class="code" id="demoQr"></div>
+          <div><b data-i="demo_t"></b><small data-i="demo_s"></small><small data-host="/tv"></small><span class="pc">7KQ4-M9XC-2HTA</span></div>
         </div>
-        <ul class="trust">
-          <li><svg><use href="#i-check"/></svg><span data-i="tr1">Grátis</span></li>
-          <li><svg><use href="#i-check"/></svg><span data-i="tr2"></span></li>
-          <li><svg><use href="#i-check"/></svg><span data-i="tr3"></span></li>
-          <li><svg><use href="#i-check"/></svg><span data-i="tr4"></span></li>
-        </ul>
+        <div class="phone"><i class="s"></i><i></i><i></i><i></i><i class="b"></i></div>
       </div>
-      <div class="shots">
-        <img class="tv" data-src="/{l}-tv-live.webp" src="/pt-tv-live.webp" alt="" data-ialt="alt_tv" width="1280" height="720">
-        <img class="ph" data-src="/{l}-phone-live.webp" src="/pt-phone-live.webp" alt="" data-ialt="alt_ph" width="540" height="960" loading="lazy">
+    </div>
+  </section>
+
+  
+  <section class="grid2">
+    <div class="wrap">
+      <div class="sec-h"><h2 data-i="ft_h"></h2><p data-i="ft_p"></p></div>
+      <div class="feat">
+        <div class="f"><span class="ic"><svg><use href="#i-guide"/></svg></span><h3 data-i="f1"></h3><p data-i="f1s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-rewind"/></svg></span><h3 data-i="f2"></h3><p data-i="f2s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-rec"/></svg></span><h3 data-i="f4"></h3><p data-i="f4s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-sort"/></svg></span><h3 data-i="f5"></h3><p data-i="f5s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-search"/></svg></span><h3 data-i="f3"></h3><p data-i="f3s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-grid"/></svg></span><h3 data-i="f6"></h3><p data-i="f6s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-bell"/></svg></span><h3 data-i="f7"></h3><p data-i="f7s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-lock"/></svg></span><h3 data-i="f8"></h3><p data-i="f8s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-qr"/></svg></span><h3 data-i="f9"></h3><p data-i="f9s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-cc"/></svg></span><h3 data-i="f10"></h3><p data-i="f10s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-reload"/></svg></span><h3 data-i="f11"></h3><p data-i="f11s"></p></div>
+        <div class="f"><span class="ic"><svg><use href="#i-upd"/></svg></span><h3 data-i="f12"></h3><p data-i="f12s"></p></div>
       </div>
+      
     </div>
   </section>
 
@@ -113,49 +194,8 @@
     </div>
   </section>
 
-  <section id="funcionalidades" style="padding-top:20px">
-    <div class="wrap">
-      <div class="sec-h"><h2 data-i="ft_h"></h2><p data-i="ft_p"></p></div>
-      <div class="feat">
-        <div class="f"><span class="ic"><svg><use href="#i-guide"/></svg></span><h3 data-i="f1"></h3><p data-i="f1s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-rewind"/></svg></span><h3 data-i="f2"></h3><p data-i="f2s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-rec"/></svg></span><h3 data-i="f4"></h3><p data-i="f4s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-sort"/></svg></span><h3 data-i="f5"></h3><p data-i="f5s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-search"/></svg></span><h3 data-i="f3"></h3><p data-i="f3s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-grid"/></svg></span><h3 data-i="f6"></h3><p data-i="f6s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-bell"/></svg></span><h3 data-i="f7"></h3><p data-i="f7s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-lock"/></svg></span><h3 data-i="f8"></h3><p data-i="f8s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-qr"/></svg></span><h3 data-i="f9"></h3><p data-i="f9s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-cc"/></svg></span><h3 data-i="f10"></h3><p data-i="f10s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-reload"/></svg></span><h3 data-i="f11"></h3><p data-i="f11s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-upd"/></svg></span><h3 data-i="f12"></h3><p data-i="f12s"></p></div>
-      </div>
-      <img class="guide" data-src="/{l}-tv-guide.webp" src="/pt-tv-guide.webp" alt="" data-ialt="alt_guide" width="1280" height="720" loading="lazy">
-      <img class="guide" data-src="/{l}-multi.webp" src="/pt-multi.webp" alt="" data-ialt="alt_multi" width="1280" height="720" loading="lazy" style="margin-top:18px">
-    </div>
-  </section>
-
-  <section id="telemovel" class="qr">
-    <div class="wrap">
-      <div>
-        <h2 data-i="qr_h"></h2>
-        <p class="lead" style="margin:0" data-i="qr_p"></p>
-        <ol class="steps">
-          <li><div><b data-i="s1b"></b><span data-i="s1s"></span></div></li>
-          <li><div><b data-i="s2b"></b><span data-i="s2s"></span></div></li>
-          <li><div><b data-i="s3b"></b><span data-i="s3s"></span></div></li>
-        </ol>
-        <a class="btn primary" href="/tv"><svg><use href="#i-qr"/></svg><span data-i="qr_btn"></span></a>
-        <div class="lock"><svg><use href="#i-lock"/></svg><span data-i="lock"></span></div>
-      </div>
-      <div class="demo" aria-hidden="true">
-        <div class="scr">
-          <div class="code" id="demoQr"></div>
-          <div><b data-i="demo_t"></b><small data-i="demo_s"></small><small data-host="/tv"></small><span class="pc">7KQ4-M9XC-2HTA</span></div>
-        </div>
-        <div class="phone"><i class="s"></i><i></i><i></i><i></i><i class="b"></i></div>
-      </div>
-    </div>
+  <section id="faq" class="faq">
+    <div class="wrap"><div class="sec-h"><h2 data-i="faq_h"></h2></div><div class="qas"><details class="qa"><summary><span data-i="q1"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a1"></p></details><details class="qa"><summary><span data-i="q2"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a2"></p></details><details class="qa"><summary><span data-i="q3"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a3"></p></details><details class="qa"><summary><span data-i="q4"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a4"></p></details><details class="qa"><summary><span data-i="q5"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a5"></p></details><details class="qa"><summary><span data-i="q6"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a6"></p></details></div></div>
   </section>
 
   <div class="legal"><div class="wrap"><div class="box"><svg><use href="#i-info"/></svg><p data-i="legal"></p></div></div></div>
@@ -191,16 +231,14 @@
   </section>
 </main>
 
-<footer>
+<footer class="foot2">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/logo.svg" alt="" width="30" height="30"><span>JH <b>IPTV</b></span></a>
-    <span>© 2026 JH IPTV</span>
-    <nav aria-label="Links">
-      <a href="/privacidade" data-i="foot_priv"></a>
-      <a href="/termos" data-i="foot_terms"></a>
-      <a href="#contacto" data-i="foot_ct"></a>
-    </nav>
+    <div class="fcol fbrand"><a class="brand" href="/"><img src="/logo.svg" alt="" width="30" height="30"><span>JH <b>IPTV</b></span></a><p data-i="foot_tag"></p><a class="mail" href="mailto:support@jhiptv.com">support@jhiptv.com</a></div>
+    <div class="fcol"><h4 data-i="foot_app"></h4><a href="#funcionalidades" data-i="nav_feat"></a><a href="#plataformas" data-i="nav_plat"></a><a href="#descarregar" data-i="nav_dl"></a><a href="/tv" data-i="nav_qr"></a></div>
+    <div class="fcol"><h4 data-i="foot_help"></h4><a href="#faq" data-i="nav_faq"></a><a href="/samsung" data-i="foot_sam"></a><a href="#contacto" data-i="foot_ct"></a></div>
+    <div class="fcol"><h4>Legal</h4><a href="/privacidade" data-i="foot_priv"></a><a href="/termos" data-i="foot_terms"></a></div>
   </div>
+  <div class="wrap fbot"><span>© 2026 JH IPTV</span><span data-i="hero_cap"></span></div>
 </footer>
 
 <script src="/site.js"></script>
@@ -209,6 +247,11 @@
 <script>
 (function(){
   var CONTACT="support@jhiptv.com";
+  var CC={pt:"PT",en:"UK",es:"ES",fr:"FR",de:"DE",it:"IT"};
+  window.jhOnLang=function(l){var me=CC[l]||"UK",oth=["PT","UK","ES","FR","DE","IT"].filter(function(x){return x!==me});
+    var rows=[[me,"News",1],[me,"Sport",1],[me,"Movies",1],[oth[0],"News",0],[oth[1],"Sport",0],[oth[2],"Kids",0],[oth[3],"Music",0]];
+    var el=document.getElementById("catRows");if(!el)return;el.innerHTML=rows.map(function(r){return'<div class="cr'+(r[2]?" on":"")+'"><span>'+r[0]+' | '+r[1]+'</span><i></i></div>'}).join("");
+    var n=document.getElementById("catN");if(n)n.textContent="3 / 248"};
   jhInit(I18N_INDEX);
   try{var q=qrcode(0,"M");q.addData("https://"+location.host+"/tv");q.make();document.getElementById("demoQr").innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true})}catch(e){}
   var f=document.getElementById("ctForm"),msg=document.getElementById("ctMsg"),btn=document.getElementById("ctSend");
