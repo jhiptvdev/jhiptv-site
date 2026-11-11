@@ -31,7 +31,7 @@
 <script src="/i18n-privacy.js"></script>
 <script>
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-window.jhOnLang=function(l){var d=I18N_PRIV[l]||I18N_PRIV.en;document.getElementById("doc").innerHTML="<h1>"+esc(d.h)+"</h1><p class=\"upd\">"+esc(d.upd)+"</p><p class=\"lead\">"+esc(d.lead)+"</p><ol>"+d.items.map(function(i){return"<li><h2>"+esc(i[0])+"</h2><p>"+esc(i[1]).replace("jhiptv.dev@gmail.com","<a href=\"mailto:jhiptv.dev@gmail.com\">jhiptv.dev@gmail.com</a>")+"</p></li>"}).join("")+"</ol>"};
+window.jhOnLang=function(l){var d=I18N_PRIV[l]||I18N_PRIV.en;document.getElementById("doc").innerHTML="<h1>"+esc(d.h)+"</h1><p class=\"upd\">"+esc(d.upd)+"</p><p class=\"lead\">"+esc(d.lead)+"</p><ol>"+d.items.map(function(i){return"<li><h2>"+esc(i[0])+"</h2><p>"+esc(i[1]).replace("support@jhiptv.com","<a href=\"mailto:support@jhiptv.com\">support@jhiptv.com</a>")+"</p></li>"}).join("")+"</ol>"};
 var T={};for(var k in I18N_PRIV)T[k]={title:I18N_PRIV[k].title,desc:I18N_PRIV[k].lead};jhInit(T);
 </script>
 </body>

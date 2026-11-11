@@ -33,7 +33,7 @@ l_name:"Nome",l_mail:"Email",l_topic:"Assunto",o_sug:"Sugestão",o_bug:"Problema
 l_dev:"Aparelho",d_and:"Android (telemóvel/tablet)",d_atv:"Android TV / box",d_lg:"TV LG",d_sam:"TV Samsung",d_oth:"Outro",
 l_msg:"Mensagem",p_msg:"Escreva aqui a sua mensagem…",
 fine:"Não pedimos nem fornecemos listas ou canais. Nunca envie palavras-passe por este formulário.",
-send:"Enviar mensagem",sending:"A enviar…",ok:"Obrigado! Recebemos a sua mensagem.",err:"Não foi possível enviar. Tente outra vez ou escreva para jhiptv.dev@gmail.com.",need:"Preencha o nome, um email válido e a mensagem.",
+send:"Enviar mensagem",sending:"A enviar…",ok:"Obrigado! Recebemos a sua mensagem.",err:"Não foi possível enviar. Tente outra vez ou escreva para support@jhiptv.com.",need:"Preencha o nome, um email válido e a mensagem.",
 f4:"Gravar programas",f4s:"No Windows, grave o que está a dar ou agende a gravação a partir do guia. Os vídeos ficam na pasta Vídeos.",f5:"Organize à sua maneira",f5s:"Ordene os grupos e os favoritos como quiser, mude o nome ou o número dos canais e esconda os que não vê.",f6:"Vários canais ao mesmo tempo",f6s:"No Windows, veja até 4 canais lado a lado e escolha qual ouvir.",f7:"Lembretes",f7s:"Marque um programa no guia e a app avisa quando estiver a começar.",f8:"Controlo parental",f8s:"Proteja categorias com PIN e esconda o que não quer que as crianças vejam.",f9:"Do telemóvel para a TV",f9s:"Aponte o telemóvel ao código QR da TV e escreva a lista no telemóvel, sem usar o comando."
 },
 en:{
@@ -70,7 +70,7 @@ l_name:"Name",l_mail:"Email",l_topic:"Subject",o_sug:"Suggestion",o_bug:"Problem
 l_dev:"Device",d_and:"Android (phone/tablet)",d_atv:"Android TV / box",d_lg:"LG TV",d_sam:"Samsung TV",d_oth:"Other",
 l_msg:"Message",p_msg:"Write your message here…",
 fine:"We don't ask for or provide playlists or channels. Never send passwords through this form.",
-send:"Send message",sending:"Sending…",ok:"Thank you! We've received your message.",err:"Couldn't send. Please try again or write to jhiptv.dev@gmail.com.",need:"Please fill in your name, a valid email and your message.",
+send:"Send message",sending:"Sending…",ok:"Thank you! We've received your message.",err:"Couldn't send. Please try again or write to support@jhiptv.com.",need:"Please fill in your name, a valid email and your message.",
 f4:"Record programmes",f4s:"On Windows, record what's on now or schedule a recording from the guide. Videos are saved in your Videos folder.",f5:"Organise it your way",f5s:"Sort groups and favourites however you like, rename or renumber channels and hide the ones you never watch.",f6:"Several channels at once",f6s:"On Windows, watch up to 4 channels side by side and choose which one to hear.",f7:"Reminders",f7s:"Mark a programme in the guide and the app lets you know when it's about to start.",f8:"Parental control",f8s:"Protect categories with a PIN and hide what you don't want children to see.",f9:"From your phone to the TV",f9s:"Point your phone at the TV's QR code and type your playlist on the phone, no remote needed."
 },
 es:{
@@ -107,7 +107,7 @@ l_name:"Nombre",l_mail:"Email",l_topic:"Asunto",o_sug:"Sugerencia",o_bug:"Proble
 l_dev:"Dispositivo",d_and:"Android (móvil/tablet)",d_atv:"Android TV / box",d_lg:"TV LG",d_sam:"TV Samsung",d_oth:"Otro",
 l_msg:"Mensaje",p_msg:"Escribe aquí tu mensaje…",
 fine:"No pedimos ni proporcionamos listas ni canales. No envíes nunca contraseñas por este formulario.",
-send:"Enviar mensaje",sending:"Enviando…",ok:"¡Gracias! Hemos recibido tu mensaje.",err:"No se pudo enviar. Inténtalo de nuevo o escribe a jhiptv.dev@gmail.com.",need:"Rellena el nombre, un email válido y el mensaje.",
+send:"Enviar mensaje",sending:"Enviando…",ok:"¡Gracias! Hemos recibido tu mensaje.",err:"No se pudo enviar. Inténtalo de nuevo o escribe a support@jhiptv.com.",need:"Rellena el nombre, un email válido y el mensaje.",
 f4:"Grabar programas",f4s:"En Windows, graba lo que estás viendo o programa la grabación desde la guía. Los vídeos se guardan en la carpeta Vídeos.",f5:"Organízala a tu manera",f5s:"Ordena los grupos y los favoritos como quieras, cambia el nombre o el número de los canales y oculta los que no ves.",f6:"Varios canales a la vez",f6s:"En Windows, mira hasta 4 canales a la vez y elige cuál escuchar.",f7:"Recordatorios",f7s:"Marca un programa en la guía y la app te avisa cuando vaya a empezar.",f8:"Control parental",f8s:"Protege categorías con PIN y oculta lo que no quieres que vean los niños.",f9:"Del móvil a la TV",f9s:"Apunta el móvil al código QR de la TV y escribe la lista en el móvil, sin usar el mando."
 },
 fr:{
@@ -144,7 +144,7 @@ l_name:"Nom",l_mail:"E-mail",l_topic:"Sujet",o_sug:"Suggestion",o_bug:"Problème
 l_dev:"Appareil",d_and:"Android (téléphone/tablette)",d_atv:"Android TV / box",d_lg:"TV LG",d_sam:"TV Samsung",d_oth:"Autre",
 l_msg:"Message",p_msg:"Écrivez votre message ici…",
 fine:"Nous ne demandons ni ne fournissons de listes ou de chaînes. N'envoyez jamais de mot de passe par ce formulaire.",
-send:"Envoyer le message",sending:"Envoi…",ok:"Merci ! Nous avons bien reçu votre message.",err:"Envoi impossible. Réessayez ou écrivez à jhiptv.dev@gmail.com.",need:"Indiquez votre nom, un e-mail valide et votre message.",
+send:"Envoyer le message",sending:"Envoi…",ok:"Merci ! Nous avons bien reçu votre message.",err:"Envoi impossible. Réessayez ou écrivez à support@jhiptv.com.",need:"Indiquez votre nom, un e-mail valide et votre message.",
 f4:"Enregistrer des programmes",f4s:"Sous Windows, enregistrez ce qui passe ou programmez l'enregistrement depuis le guide. Les vidéos vont dans le dossier Vidéos.",f5:"Organisez à votre façon",f5s:"Triez groupes et favoris comme vous voulez, renommez ou renumérotez les chaînes et masquez celles que vous ne regardez pas.",f6:"Plusieurs chaînes à la fois",f6s:"Sous Windows, regardez jusqu'à 4 chaînes côte à côte et choisissez laquelle écouter.",f7:"Rappels",f7s:"Marquez un programme dans le guide et l'app vous prévient quand il va commencer.",f8:"Contrôle parental",f8s:"Protégez des catégories avec un code PIN et masquez ce que les enfants ne doivent pas voir.",f9:"Du téléphone à la TV",f9s:"Scannez le QR code de la TV avec le téléphone et saisissez votre liste sur le téléphone, sans télécommande."
 },
 de:{
@@ -181,7 +181,7 @@ l_name:"Name",l_mail:"E-Mail",l_topic:"Betreff",o_sug:"Vorschlag",o_bug:"Problem
 l_dev:"Gerät",d_and:"Android (Handy/Tablet)",d_atv:"Android TV / Box",d_lg:"LG-Fernseher",d_sam:"Samsung-Fernseher",d_oth:"Anderes",
 l_msg:"Nachricht",p_msg:"Schreib hier deine Nachricht…",
 fine:"Wir fragen nicht nach Playlists oder Sendern und stellen keine bereit. Sende niemals Passwörter über dieses Formular.",
-send:"Nachricht senden",sending:"Wird gesendet…",ok:"Danke! Wir haben deine Nachricht erhalten.",err:"Senden fehlgeschlagen. Bitte erneut versuchen oder an jhiptv.dev@gmail.com schreiben.",need:"Bitte Name, eine gültige E-Mail und die Nachricht angeben.",
+send:"Nachricht senden",sending:"Wird gesendet…",ok:"Danke! Wir haben deine Nachricht erhalten.",err:"Senden fehlgeschlagen. Bitte erneut versuchen oder an support@jhiptv.com schreiben.",need:"Bitte Name, eine gültige E-Mail und die Nachricht angeben.",
 f4:"Sendungen aufnehmen",f4s:"Unter Windows aufnehmen, was gerade läuft, oder Aufnahmen im Guide planen. Die Videos landen im Ordner Videos.",f5:"Nach deinem Geschmack ordnen",f5s:"Gruppen und Favoriten beliebig sortieren, Sender umbenennen oder neu nummerieren und nie gesehene ausblenden.",f6:"Mehrere Sender gleichzeitig",f6s:"Unter Windows bis zu 4 Sender nebeneinander ansehen und wählen, welchen du hörst.",f7:"Erinnerungen",f7s:"Markiere eine Sendung im Guide und die App meldet sich, kurz bevor sie beginnt.",f8:"Kindersicherung",f8s:"Schütze Kategorien mit einer PIN und blende aus, was Kinder nicht sehen sollen.",f9:"Vom Handy auf den Fernseher",f9s:"Richte das Handy auf den QR-Code am Fernseher und gib die Playlist am Handy ein, ganz ohne Fernbedienung."
 },
 it:{
@@ -218,7 +218,7 @@ l_name:"Nome",l_mail:"Email",l_topic:"Oggetto",o_sug:"Suggerimento",o_bug:"Probl
 l_dev:"Dispositivo",d_and:"Android (telefono/tablet)",d_atv:"Android TV / box",d_lg:"TV LG",d_sam:"TV Samsung",d_oth:"Altro",
 l_msg:"Messaggio",p_msg:"Scrivi qui il tuo messaggio…",
 fine:"Non chiediamo né forniamo playlist o canali. Non inviare mai password tramite questo modulo.",
-send:"Invia messaggio",sending:"Invio…",ok:"Grazie! Abbiamo ricevuto il tuo messaggio.",err:"Invio non riuscito. Riprova o scrivi a jhiptv.dev@gmail.com.",need:"Inserisci nome, un'email valida e il messaggio.",
+send:"Invia messaggio",sending:"Invio…",ok:"Grazie! Abbiamo ricevuto il tuo messaggio.",err:"Invio non riuscito. Riprova o scrivi a support@jhiptv.com.",need:"Inserisci nome, un'email valida e il messaggio.",
 f4:"Registra i programmi",f4s:"Su Windows, registra ciò che va in onda o programma la registrazione dalla guida. I video finiscono nella cartella Video.",f5:"Organizza a modo tuo",f5s:"Ordina gruppi e preferiti come vuoi, rinomina o rinumera i canali e nascondi quelli che non guardi.",f6:"Più canali insieme",f6s:"Su Windows guarda fino a 4 canali affiancati e scegli quale ascoltare.",f7:"Promemoria",f7s:"Segna un programma nella guida e l'app ti avvisa quando sta per iniziare.",f8:"Controllo parentale",f8s:"Proteggi le categorie con un PIN e nascondi ciò che i bambini non devono vedere.",f9:"Dal telefono alla TV",f9s:"Inquadra il codice QR della TV con il telefono e scrivi la playlist sul telefono, senza telecomando."
 }
 };
