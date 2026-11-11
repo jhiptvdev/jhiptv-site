@@ -247,3 +247,57 @@ footer a{color:var(--muted)}footer a:hover{color:var(--fg)}
 .faq .sec-h{text-align:center;margin-left:auto;margin-right:auto}
 .foot2 .wrap:first-child{align-items:start}.foot2 .fcol{align-self:start;justify-content:flex-start}
 @media (max-width:640px){.ann svg{display:none}}
+
+/* ===== v2.1: animações e bandeiras ===== */
+.flag{display:inline-block;width:22px;height:15px;border-radius:3px;overflow:hidden;flex:none;box-shadow:0 0 0 1px rgba(255,255,255,.18);vertical-align:-2px}
+.flag svg{width:100%;height:100%;display:block}
+.lang.lp-on select{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+.lang.lp-on:after{display:none}
+.lp-btn{display:flex;align-items:center;gap:9px;background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font:600 14px var(--font);cursor:pointer}
+.lp-btn:hover{border-color:rgba(255,181,71,.5)}
+.lp-c{width:7px;height:7px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-2px) rotate(45deg);margin-left:4px;transition:transform .2s}
+.lang.open .lp-c{transform:translateY(1px) rotate(-135deg)}
+.lp-menu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;list-style:none;margin:0;padding:6px;min-width:190px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.55);animation:lpIn .18s ease-out}
+.lp-menu li{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;cursor:pointer;font:600 14.5px var(--font);color:var(--fg);outline:none}
+.lp-menu li:hover,.lp-menu li:focus{background:var(--surface2)}
+.lp-menu li[aria-selected="true"]{color:var(--accent)}
+@keyframes lpIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.cr span{display:flex;align-items:center;gap:10px}
+/* aparecer ao fazer scroll */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease var(--d,0ms),transform .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms)}
+.rv.in{opacity:1;transform:none}
+.alt .media.rv{transform:translateY(26px) scale(.97)}.alt .media.rv.in{transform:none}
+/* herói */
+.hero2>.wrap>*{animation:upIn .8s cubic-bezier(.2,.7,.2,1) both}
+.hero2 .eyebrow{animation-delay:.05s}.hero2 h1{animation-delay:.12s}.hero2 .lead{animation-delay:.2s}.hero2 .ctas{animation-delay:.28s}.hero2 .trust{animation-delay:.34s}.hero2 .stage{animation-delay:.42s}.hero2 .cap{animation-delay:.5s}
+@keyframes upIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero2 h1 em{background-size:200% 100%;animation:shine 6s ease-in-out infinite}
+@keyframes shine{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero2 h1 em{background-image:linear-gradient(100deg,#FFC861,#FF7A45,#FFC861)}
+.hero2:before{animation:glow 7s ease-in-out infinite}
+@keyframes glow{0%,100%{opacity:.85;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
+.bdg{animation:bob 5s ease-in-out infinite}.bdg.b2{animation-delay:-1.6s}.bdg.b3{animation-delay:-3.2s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.phf{animation:float 7s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(-1deg)}}
+.btn.primary{position:relative;overflow:hidden}
+.btn.primary:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:sweep 4.5s ease-in-out infinite}
+@keyframes sweep{0%,70%{left:-60%}100%{left:130%}}
+/* faixa de funcionalidades */
+.marq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);padding:14px 0;margin-top:30px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq-t{display:flex;gap:26px;width:max-content;animation:mq 40s linear infinite;font:700 16px var(--display);color:var(--muted);white-space:nowrap}
+.mq-t i{color:var(--accent);font-style:normal}
+.marq:hover .mq-t{animation-play-state:paused}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* plataformas e cartões */
+.plat li{transition:transform .25s,border-color .25s,box-shadow .25s}.plat li:hover{transform:translateY(-4px);border-color:rgba(255,181,71,.5);box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.grid2 .f .ic{transition:transform .3s}.grid2 .f:hover .ic{transform:scale(1.12) rotate(-6deg)}
+.frame{transition:transform .5s cubic-bezier(.2,.7,.2,1)}.frame:hover{transform:translateY(-6px) rotate(-.4deg)}
+/* categorias: marcar uma a uma */
+.media.in .cr.on i{animation:tick .45s cubic-bezier(.3,1.6,.5,1) both;animation-delay:calc(.5s + var(--k)*.28s)}
+.media.in .cr.on{animation:rowOn .45s ease both;animation-delay:calc(.5s + var(--k)*.28s)}
+@keyframes tick{from{transform:scale(0);opacity:0}to{transform:none;opacity:1}}
+@keyframes rowOn{from{color:var(--muted)}to{color:var(--accent)}}
+.media.in .cm-btns .on{animation:pressB .5s ease .2s both}
+@keyframes pressB{0%{transform:scale(1)}40%{transform:scale(.92)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}

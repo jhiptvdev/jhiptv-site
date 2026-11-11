@@ -38,3 +38,39 @@ function jhInit(dict){
   var s=document.getElementById("langSel");if(s)s.addEventListener("change",function(){jhApply(s.value)});
   jhApply(jhLang());
 }
+
+/* ===== bandeiras e seletor de idioma com bandeira ===== */
+var JH_FLAGS={
+pt:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#DA291C"/><rect width="12" height="20" fill="#046A38"/><circle cx="12" cy="10" r="4.4" fill="#FFE900"/><rect x="10" y="7.6" width="4" height="4.8" rx="1.2" fill="#DA291C"/><rect x="11" y="8.6" width="2" height="2.6" rx=".6" fill="#fff"/></svg>',
+en:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#012169"/><path d="M0 0L30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0L30 20M30 0L0 20" stroke="#C8102E" stroke-width="1.5"/><path d="M15 0V20M0 10H30" stroke="#fff" stroke-width="6"/><path d="M15 0V20M0 10H30" stroke="#C8102E" stroke-width="3.4"/></svg>',
+es:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg>',
+fr:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#EF4135"/><rect width="20" height="20" fill="#fff"/><rect width="10" height="20" fill="#0055A4"/></svg>',
+de:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#FFCE00"/><rect width="30" height="13.4" fill="#DD0000"/><rect width="30" height="6.7" fill="#000"/></svg>',
+it:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#CE2B37"/><rect width="20" height="20" fill="#fff"/><rect width="10" height="20" fill="#009246"/></svg>'};
+function jhFlag(l){return'<span class="flag">'+(JH_FLAGS[l]||"")+'</span>'}
+function jhFlagPicker(){
+  var s=document.getElementById("langSel");if(!s||s.getAttribute("data-fp"))return;s.setAttribute("data-fp","1");
+  var box=s.parentNode;box.classList.add("lp-on");
+  var b=document.createElement("button");b.type="button";b.className="lp-btn";b.setAttribute("aria-haspopup","listbox");b.setAttribute("aria-expanded","false");b.setAttribute("aria-label",s.getAttribute("aria-label")||"Language");
+  var m=document.createElement("ul");m.className="lp-menu";m.setAttribute("role","listbox");m.hidden=true;
+  [].forEach.call(s.options,function(o){var li=document.createElement("li");li.setAttribute("role","option");li.tabIndex=-1;li.setAttribute("data-v",o.value);li.innerHTML=jhFlag(o.value)+"<span>"+o.textContent+"</span>";m.appendChild(li)});
+  box.appendChild(b);box.appendChild(m);
+  function paint(){var o=s.options[s.selectedIndex];b.innerHTML=jhFlag(s.value)+'<span class="lp-n">'+(o?o.textContent:"")+'</span><i class="lp-c"></i>';[].forEach.call(m.children,function(li){li.setAttribute("aria-selected",String(li.getAttribute("data-v")===s.value))})}
+  function open(v){m.hidden=!v;b.setAttribute("aria-expanded",String(v));box.classList.toggle("open",v);if(v){var c=m.querySelector('[aria-selected="true"]')||m.firstChild;c.focus()}}
+  b.addEventListener("click",function(e){e.stopPropagation();open(m.hidden)});
+  m.addEventListener("click",function(e){var li=e.target.closest("li");if(!li)return;s.value=li.getAttribute("data-v");s.dispatchEvent(new Event("change"));open(false);b.focus()});
+  m.addEventListener("keydown",function(e){var a=document.activeElement,k=e.key;if(k==="ArrowDown"&&a.nextSibling){e.preventDefault();a.nextSibling.focus()}else if(k==="ArrowUp"&&a.previousSibling){e.preventDefault();a.previousSibling.focus()}else if(k==="Enter"||k===" "){e.preventDefault();a.click()}else if(k==="Escape"){open(false);b.focus()}});
+  document.addEventListener("click",function(e){if(!box.contains(e.target))open(false)});
+  s.addEventListener("change",paint);paint();
+  var prev=window.jhOnLang;window.jhOnLang=function(l){paint();if(prev)prev(l)};
+}
+/* ===== animações ao aparecer no ecrã ===== */
+function jhReveal(sel){
+  var els=[].slice.call(document.querySelectorAll(sel));
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  els.forEach(function(e){var p=e.parentNode,i=[].indexOf.call(p.children,e);e.classList.add("rv");e.style.setProperty("--d",Math.min(i,8)*70+"ms")});
+  if(reduce||!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{rootMargin:"0px 0px -8% 0px",threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+}
+(function(){var go=function(){jhFlagPicker()};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go()})();
