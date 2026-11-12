@@ -40,7 +40,7 @@
   <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" fill="currentColor"/></symbol>
 </svg>
 
-<div class="sprog" id="sprog"></div><div class="bgfx" aria-hidden="true"><i class="o1"></i><i class="o2"></i><i class="o3"></i></div>
+<div class="sprog" id="sprog"></div><div class="cur" id="cur" aria-hidden="true"></div><div class="bgfx" aria-hidden="true"><i class="o1"></i><i class="o2"></i><i class="o3"></i></div>
 <div class="ann"><div class="wrap"><svg><use href="#i-spark"/></svg><span data-i="ann"></span><a href="#b3"><span data-i="ann_go"></span> →</a></div></div>
 <header class="top">
   <div class="wrap">
@@ -60,10 +60,11 @@
 </header>
 
 <main id="main">
-  <section class="hero2">
+  <section class="hero2"><canvas class="fx" id="fx" aria-hidden="true"></canvas>
     <div class="wrap">
       <p class="eyebrow" data-i="eyebrow">Leitor IPTV para todos os ecrãs</p>
       <h1 data-ih="h1">A sua televisão, <em>simples e rápida</em>, em todos os ecrãs.</h1>
+      <p class="rot" aria-hidden="true"><span class="rot-w" id="rotW"></span></p>
       <p class="lead" data-i="lead"></p>
       <div class="ctas">
         <a class="btn primary" href="#descarregar"><span data-i="cta1">Descarregar grátis</span><svg><use href="#i-arrow"/></svg></a>
@@ -260,7 +261,7 @@
 (function(){
   var CONTACT="support@jhiptv.com";
   var CC={pt:"PT",en:"UK",es:"ES",fr:"FR",de:"DE",it:"IT"};
-  window.jhOnLang=function(l){var me=CC[l]||"UK",oth=["PT","UK","ES","FR","DE","IT"].filter(function(x){return x!==me});
+  window.jhOnLang=function(l){jhSplitH1();jhRot(jt("rot"));var me=CC[l]||"UK",oth=["PT","UK","ES","FR","DE","IT"].filter(function(x){return x!==me});
     var FL={PT:"pt",UK:"en",ES:"es",FR:"fr",DE:"de",IT:"it"};
     var rows=[[me,"News",1],[me,"Sport",1],[me,"Movies",1],[oth[0],"News",0],[oth[1],"Sport",0],[oth[2],"Kids",0],[oth[3],"Music",0]];
     var el=document.getElementById("catRows");
@@ -268,7 +269,7 @@
     if(!el)return;el.innerHTML=rows.map(function(r,i){return'<div class="cr'+(r[2]?" on":"")+'" style="--k:'+i+'"><span>'+jhFlag(FL[r[0]])+r[0]+' | '+r[1]+'</span><i></i></div>'}).join("");
     var n=document.getElementById("catN");if(n)n.textContent="3 / 248"};
   jhInit(I18N_INDEX);
-  jhModern();
+  jhModern();jhFx();
   jhReveal(".stats .stat,.alt .txt,.alt .media,.plat h2,.plat li,.feat .f,.stores .store,.qa,.sec-h,.qr .wrap>div,.contact .wrap>*,.legal .box,.foot2 .fcol");
   try{var q=qrcode(0,"M");q.addData("https://"+location.host+"/tv");q.make();document.getElementById("demoQr").innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true})}catch(e){}
   var f=document.getElementById("ctForm"),msg=document.getElementById("ctMsg"),btn=document.getElementById("ctSend");
