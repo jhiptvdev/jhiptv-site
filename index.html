@@ -3,17 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>JH IPTV</title>
-<meta name="description" content="">
+<title>JH IPTV — Leitor IPTV para Android, Windows e Smart TV</title>
+<meta name="description" content="Leitor IPTV grátis para listas M3U e Xtream Codes, com guia TV, catch-up até 7 dias e recuar no direto. Android, Android TV e Windows.">
+<link rel="canonical" href="https://jhiptv.com/">
 <meta name="theme-color" content="#0A0E1C">
 <link rel="icon" href="/logo.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/f-bric.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/site.css">
-<meta property="og:title" content="JH IPTV">
-<meta property="og:image" content="/en-tv-live.webp">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jhiptv.com/">
+<meta property="og:site_name" content="JH IPTV">
+<meta property="og:title" content="JH IPTV — Leitor IPTV para Android, Windows e Smart TV">
+<meta property="og:description" content="Leitor IPTV grátis para listas M3U e Xtream Codes, com guia TV, catch-up e multi-ecrã.">
+<meta property="og:image" content="https://jhiptv.com/en-tv-live.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"JH IPTV","url":"https://jhiptv.com/","applicationCategory":"MultimediaApplication","operatingSystem":"Windows 10, Windows 11, Android, Android TV, LG webOS, Samsung Tizen","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":["pt","en","es","fr","de","it"]}</script>
 </head>
-<body class="v5">
+<body class="v5 v6">
 <a class="skip" href="#main" data-i="skip">Saltar para o conteúdo</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -58,8 +64,22 @@
       <option value="pt">Português</option><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="it">Italiano</option>
     </select></div>
     <a class="btn primary sm" href="#descarregar" data-i="cta_top">Descarregar</a>
+    <button class="mbtn" id="mBtn" type="button" aria-expanded="false" aria-controls="mNav" data-ia="menu" aria-label="Menu"><i></i><i></i><i></i></button>
   </div>
 </header>
+<div class="mnav" id="mNav" hidden>
+  <nav aria-label="Menu">
+    <a href="#funcionalidades"><b>1</b><span data-i="nav_feat"></span></a>
+    <a href="#plataformas"><b>2</b><span data-i="nav_plat"></span></a>
+    <a href="#telemovel"><b>3</b><span data-i="nav_qr"></span></a>
+    <a href="#descarregar"><b>4</b><span data-i="nav_dl"></span></a>
+    <a href="#faq"><b>5</b><span data-i="nav_faq"></span></a>
+    <a href="#contacto"><b>6</b><span data-i="nav_ct"></span></a>
+  </nav>
+  <a class="btn primary" href="#descarregar"><span data-i="cta_top"></span><svg><use href="#i-arrow"/></svg></a>
+</div>
+<div class="chosd" id="chOsd" aria-hidden="true"><b></b><span></span></div>
+<button class="totop" id="toTop" type="button" data-ia="top_btn" aria-label="Topo"><svg><use href="#i-chev"/></svg></button>
 
 <main id="main">
   <section class="hero2">
@@ -141,12 +161,16 @@
         <a class="btn primary" href="/tv"><svg><use href="#i-qr"/></svg><span data-i="qr_btn"></span></a>
         <div class="lock"><svg><use href="#i-lock"/></svg><span data-i="lock"></span></div>
       </div>
-      <div class="demo" aria-hidden="true">
+      <div class="demo d6" id="qrDemo" aria-hidden="true">
         <div class="scr">
-          <div class="code" id="demoQr"></div>
-          <div><b data-i="demo_t"></b><small data-i="demo_s"></small><small data-host="/tv"></small><span class="pc">7KQ4-M9XC-2HTA</span></div>
+          <div class="st a">
+            <div class="codew"><div class="code" id="demoQr"></div><i class="scanl"></i></div>
+            <div><b data-i="demo_t"></b><small data-i="demo_s"></small><small data-host="/tv"></small><span class="pc">7KQ4-M9XC-2HTA</span></div>
+          </div>
+          <div class="st b"><span class="okc"><svg><use href="#i-check"/></svg></span><b data-i="demo_ok"></b><small data-i="demo_ok_s"></small><i class="ld"><i></i></i></div>
         </div>
-        <div class="phone"><i class="s"></i><i></i><i></i><i></i><i class="b"></i></div>
+        <i class="beam"></i>
+        <div class="phone"><i class="s"></i><i class="pf f1"></i><i class="pf f2"></i><i class="pf f3"></i><i class="b"></i></div>
       </div>
     </div>
   </section>
@@ -167,6 +191,7 @@
         <a class="store" href="https://apps.microsoft.com/detail/9P0GNW18165F" target="_blank" rel="noopener">
           <span class="ic"><svg><use href="#i-monitor"/></svg></span>
           <span><h3>Microsoft Store</h3><small data-i="st_ms"></small></span>
+          <span class="vr"><i></i><span data-i="avail"></span><em><span data-i="ver"></span> <b data-ver="windows"></b></em></span>
           <span class="go"><span data-i="open">Abrir loja</span><svg><use href="#i-arrow"/></svg></span>
         </a>
         <div class="store soon">
@@ -196,7 +221,7 @@
   </section>
 
   <section id="faq" class="faq">
-    <div class="wrap"><div class="sec-h"><h2 data-i="faq_h"></h2></div><div class="qas"><details class="qa"><summary><span data-i="q1"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a1"></p></details><details class="qa"><summary><span data-i="q2"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a2"></p></details><details class="qa"><summary><span data-i="q3"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a3"></p></details><details class="qa"><summary><span data-i="q4"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a4"></p></details><details class="qa"><summary><span data-i="q5"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a5"></p></details><details class="qa"><summary><span data-i="q6"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a6"></p></details></div></div>
+    <div class="wrap"><div class="sec-h"><h2 data-i="faq_h"></h2><p data-ih="faq_p"></p></div><div class="qas"><details class="qa" name="faq"><summary><span data-i="q1"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a1"></p></details><details class="qa" name="faq"><summary><span data-i="q2"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a2"></p></details><details class="qa" name="faq"><summary><span data-i="q3"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a3"></p></details><details class="qa" name="faq"><summary><span data-i="q4"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a4"></p></details><details class="qa" name="faq"><summary><span data-i="q5"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a5"></p></details><details class="qa" name="faq"><summary><span data-i="q6"></span><svg><use href="#i-chev"/></svg></summary><p data-ih="a6"></p></details></div></div>
   </section>
 
   <div class="legal"><div class="wrap"><div class="box"><svg><use href="#i-info"/></svg><p data-i="legal"></p></div></div></div>
@@ -257,7 +282,7 @@
     if(!el)return;el.innerHTML=rows.map(function(r,i){return'<div class="cr'+(r[2]?" on":"")+'" style="--k:'+i+'"><span>'+jhFlag(FL[r[0]])+r[0]+' | '+r[1]+'</span><i></i></div>'}).join("");
     var n=document.getElementById("catN");if(n)n.textContent="3 / 248"};
   jhInit(I18N_INDEX);
-  jhModern();jhFx();jhTV();jhSrc();
+  jhModern();jhFx();jhTV();jhSrc();jhV6();
   jhReveal(".alt .txt,.alt .media,.plat h2,.plat li,.epg .ep,.stores .store,.qa,.sec-h,.qr .wrap>div,.contact .wrap>*,.legal .box,.foot2 .fcol");
   try{var q=qrcode(0,"M");q.addData("https://"+location.host+"/tv");q.make();document.getElementById("demoQr").innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true})}catch(e){}
   var f=document.getElementById("ctForm"),msg=document.getElementById("ctMsg"),btn=document.getElementById("ctSend");

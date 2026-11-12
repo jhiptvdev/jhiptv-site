@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /tv
+
+Sitemap: https://jhiptv.com/sitemap.xml
