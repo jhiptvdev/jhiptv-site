@@ -7,11 +7,13 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#0A0E1C">
 <link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site.css">
 <meta property="og:title" content="JH IPTV">
 <meta property="og:image" content="/en-tv-live.webp">
 </head>
-<body>
+<body class="v5">
 <a class="skip" href="#main" data-i="skip">Saltar para o conteúdo</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -40,7 +42,7 @@
   <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" fill="currentColor"/></symbol>
 </svg>
 
-<div class="sprog" id="sprog"></div><div class="cur" id="cur" aria-hidden="true"></div><div class="bgfx" aria-hidden="true"><i class="o1"></i><i class="o2"></i><i class="o3"></i></div>
+<div class="sprog" id="sprog"></div><div class="bgfx" aria-hidden="true"><i class="o1"></i><i class="o2"></i><i class="o3"></i></div>
 <div class="ann"><div class="wrap"><svg><use href="#i-spark"/></svg><span data-i="ann"></span><a href="#b3"><span data-i="ann_go"></span> →</a></div></div>
 <header class="top">
   <div class="wrap">
@@ -60,7 +62,7 @@
 </header>
 
 <main id="main">
-  <section class="hero2"><canvas class="fx" id="fx" aria-hidden="true"></canvas>
+  <section class="hero2">
     <div class="wrap">
       <p class="eyebrow" data-i="eyebrow">Leitor IPTV para todos os ecrãs</p>
       <h1 data-ih="h1">A sua televisão, <em>simples e rápida</em>, em todos os ecrãs.</h1>
@@ -77,26 +79,25 @@
         <li><svg><use href="#i-check"/></svg><span data-i="tr4"></span></li>
       </ul>
       <div class="stage">
-        <div class="tvf"><img data-src="/{l}-tv-live.webp" src="/pt-tv-live.webp" alt="" data-ialt="alt_tv" width="1280" height="720"></div>
+        <div class="tvset">
+          <div class="tvscr" id="tvScr"><img class="sc on" data-src="/{l}-tv-live.webp" src="/pt-tv-live.webp" alt="" data-ialt="alt_tv" width="1280" height="720"><img class="sc" data-src="/{l}-tv-guide.webp" src="/pt-tv-guide.webp" alt=""  width="1280" height="720"><img class="sc" data-src="/{l}-multi.webp" src="/pt-multi.webp" alt=""  width="1280" height="720"><img class="sc" data-src="/{l}-subs.webp" src="/pt-subs.webp" alt=""  width="1280" height="720"><div class="noise"></div><div class="scan"></div>
+            <div class="osd" id="tvOsd"><b id="tvNum">1</b><span id="tvName" data-i="ch1"></span></div>
+          </div>
+          <div class="tvfoot"><span class="led"></span></div>
+        </div>
         <div class="phf"><img data-src="/{l}-phone-live.webp" src="/pt-phone-live.webp" alt="" data-ialt="alt_ph" width="540" height="960" loading="lazy"></div>
-        <span class="bdg b1"><svg><use href="#i-cc"/></svg><span data-i="bd1"></span></span>
-        <span class="bdg b2"><svg><use href="#i-grid"/></svg><span data-i="bd2"></span></span>
-        <span class="bdg b3"><svg><use href="#i-guide"/></svg><span data-i="bd3"></span></span>
+        <div class="remote" role="group" data-ia="zap">
+          <button type="button" id="chUp" data-ia="ch_up"><svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <span class="rch">CH</span>
+          <button type="button" id="chDn" data-ia="ch_dn"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="rdots" id="rDots"><i class="on"></i><i></i><i></i><i></i></div>
+        </div>
       </div>
       <p class="cap" data-i="hero_cap"></p>
     </div>
   </section>
 
-  <div class="marq" aria-hidden="true"><div class="mq-t" id="mqT"></div></div>
-
-  <section class="stats">
-    <div class="wrap">
-      <div class="stat"><b data-cnt="6">0</b><span data-i="st1"></span></div>
-      <div class="stat"><b data-cnt="4">0</b><span data-i="st2"></span></div>
-      <div class="stat"><b data-cnt="7">0</b><span data-i="st3"></span></div>
-      <div class="stat"><b data-cnt="0" data-txt="0 €">0</b><span data-i="st4"></span></div>
-    </div>
-  </section>
+  <div class="marq" aria-hidden="true"><span class="tk-tag"><i></i><b data-i="tk_live"></b></span><div class="mq-in"><div class="mq-t" id="mqT"></div></div></div>
 
   <section class="plat" id="plataformas">
     <div class="wrap"><h2 data-i="plat_h"></h2><ul><li><svg><use href="#i-monitor"/></svg><span>Windows</span></li><li><svg><use href="#i-phone"/></svg><span>Android</span></li><li><svg><use href="#i-tv"/></svg><span>Android TV</span></li><li><svg><use href="#i-stick"/></svg><span>Fire TV</span></li><li><svg><use href="#i-tv"/></svg><span>LG webOS</span></li><li><svg><use href="#i-tv"/></svg><span>Samsung Tizen</span></li></ul></div>
@@ -154,21 +155,8 @@
   <section class="grid2">
     <div class="wrap">
       <div class="sec-h"><h2 data-i="ft_h"></h2><p data-i="ft_p"></p></div>
-      <div class="feat">
-        <div class="f"><span class="ic"><svg><use href="#i-guide"/></svg></span><h3 data-i="f1"></h3><p data-i="f1s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-rewind"/></svg></span><h3 data-i="f2"></h3><p data-i="f2s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-rec"/></svg></span><h3 data-i="f4"></h3><p data-i="f4s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-sort"/></svg></span><h3 data-i="f5"></h3><p data-i="f5s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-search"/></svg></span><h3 data-i="f3"></h3><p data-i="f3s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-grid"/></svg></span><h3 data-i="f6"></h3><p data-i="f6s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-bell"/></svg></span><h3 data-i="f7"></h3><p data-i="f7s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-lock"/></svg></span><h3 data-i="f8"></h3><p data-i="f8s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-qr"/></svg></span><h3 data-i="f9"></h3><p data-i="f9s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-cc"/></svg></span><h3 data-i="f10"></h3><p data-i="f10s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-reload"/></svg></span><h3 data-i="f11"></h3><p data-i="f11s"></p></div>
-        <div class="f"><span class="ic"><svg><use href="#i-upd"/></svg></span><h3 data-i="f12"></h3><p data-i="f12s"></p></div>
-      </div>
-      
+      <div class="epg"><div class="ep" style="--p:62"><span class="epn">1</span><span class="epi"><svg><use href="#i-guide"/></svg></span><div class="epb"><h3 data-i="f1"></h3><p data-i="f1s"></p><i class="epbar"><i></i></i></div></div><div class="ep" style="--p:35"><span class="epn">2</span><span class="epi"><svg><use href="#i-rewind"/></svg></span><div class="epb"><h3 data-i="f2"></h3><p data-i="f2s"></p><i class="epbar"><i></i></i></div></div><div class="ep" style="--p:80"><span class="epn">3</span><span class="epi"><svg><use href="#i-rec"/></svg></span><div class="epb"><h3 data-i="f4"></h3><p data-i="f4s"></p><i class="epbar"><i></i></i></div></div><div class="ep" style="--p:48"><span class="epn">4</span><span class="epi"><svg><use href="#i-sort"/></svg></span><div class="epb"><h3 data-i="f5"></h3><p data-i="f5s"></p><i class="epbar"><i></i></i></div></div><div class="ep" style="--p:71"><span class="epn">5</span><span class="epi"><svg><use href="#i-search"/></svg></span><div class="epb"><h3 data-i="f3"></h3><p data-i="f3s"></p><i class="epbar"><i></i></i></div></div><div class="ep" style="--p:27"><span class="epn">6</span><span class="epi"><svg><use href="#i-grid"/></svg></span><div class="epb"><h3 data-i="f6"></h3><p data-i="f6s"></p><i class="epbar"><i></i></i></div></div><div class="ep" style="--p:55"><span class="epn">7</span><span class="epi"><svg><use href="#i-bell"/></svg></span><div class="epb"><h3 data-i="f7"></h3><p data-i="f7s"></p><i class="epbar"><i></i></i></div></div><div class="ep" style="--p:90"><span class="epn">8</span><span class="epi"><svg><use href="#i-lock"/></svg></span><div class="epb"><h3 data-i="f8"></h3><p data-i="f8s"></p><i class="epbar"><i></i></i></div></div><div class="ep" style="--p:40"><span class="epn">9</span><span class="epi"><svg><use href="#i-qr"/></svg></span><div class="epb"><h3 data-i="f9"></h3><p data-i="f9s"></p><i class="epbar"><i></i></i></div></div><div class="ep" style="--p:66"><span class="epn">10</span><span class="epi"><svg><use href="#i-cc"/></svg></span><div class="epb"><h3 data-i="f10"></h3><p data-i="f10s"></p><i class="epbar"><i></i></i></div></div><div class="ep" style="--p:30"><span class="epn">11</span><span class="epi"><svg><use href="#i-reload"/></svg></span><div class="epb"><h3 data-i="f11"></h3><p data-i="f11s"></p><i class="epbar"><i></i></i></div></div><div class="ep" style="--p:75"><span class="epn">12</span><span class="epi"><svg><use href="#i-upd"/></svg></span><div class="epb"><h3 data-i="f12"></h3><p data-i="f12s"></p><i class="epbar"><i></i></i></div></div></div>
+            
     </div>
   </section>
 
@@ -261,7 +249,7 @@
 (function(){
   var CONTACT="support@jhiptv.com";
   var CC={pt:"PT",en:"UK",es:"ES",fr:"FR",de:"DE",it:"IT"};
-  window.jhOnLang=function(l){jhSplitH1();jhRot(jt("rot"));var me=CC[l]||"UK",oth=["PT","UK","ES","FR","DE","IT"].filter(function(x){return x!==me});
+  window.jhOnLang=function(l){jhSplitH1();jhRot(jt("rot"));var nm=document.getElementById("tvName");if(nm)nm.textContent=jt("ch"+(JH_TV.i+1));var me=CC[l]||"UK",oth=["PT","UK","ES","FR","DE","IT"].filter(function(x){return x!==me});
     var FL={PT:"pt",UK:"en",ES:"es",FR:"fr",DE:"de",IT:"it"};
     var rows=[[me,"News",1],[me,"Sport",1],[me,"Movies",1],[oth[0],"News",0],[oth[1],"Sport",0],[oth[2],"Kids",0],[oth[3],"Music",0]];
     var el=document.getElementById("catRows");
@@ -269,8 +257,8 @@
     if(!el)return;el.innerHTML=rows.map(function(r,i){return'<div class="cr'+(r[2]?" on":"")+'" style="--k:'+i+'"><span>'+jhFlag(FL[r[0]])+r[0]+' | '+r[1]+'</span><i></i></div>'}).join("");
     var n=document.getElementById("catN");if(n)n.textContent="3 / 248"};
   jhInit(I18N_INDEX);
-  jhModern();jhFx();
-  jhReveal(".stats .stat,.alt .txt,.alt .media,.plat h2,.plat li,.feat .f,.stores .store,.qa,.sec-h,.qr .wrap>div,.contact .wrap>*,.legal .box,.foot2 .fcol");
+  jhModern();jhFx();jhTV();jhSrc();
+  jhReveal(".alt .txt,.alt .media,.plat h2,.plat li,.epg .ep,.stores .store,.qa,.sec-h,.qr .wrap>div,.contact .wrap>*,.legal .box,.foot2 .fcol");
   try{var q=qrcode(0,"M");q.addData("https://"+location.host+"/tv");q.make();document.getElementById("demoQr").innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true})}catch(e){}
   var f=document.getElementById("ctForm"),msg=document.getElementById("ctMsg"),btn=document.getElementById("ctSend");
   function show(t,k){msg.textContent=t;msg.className="msg "+k}
