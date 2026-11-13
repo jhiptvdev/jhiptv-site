@@ -183,14 +183,32 @@ function jhV6(){
   var qd=$("#qrDemo");if(qd&&!JH_RM&&"IntersectionObserver" in window)new IntersectionObserver(function(en){qd.classList.toggle("run",en[0].isIntersecting)},{threshold:.3}).observe(qd);
   var links=[].slice.call(d.querySelectorAll("#mNav nav a")),tl=[].slice.call(d.querySelectorAll(".top .nav a[href^='#']")),osd=$("#chOsd"),cur=-2,ot=null,tick=false;
   var secs=links.map(function(a){return d.getElementById(a.getAttribute("href").slice(1))});
-  function spy(){tick=false;var y=innerHeight*.4,best=-1,bt=-1e9;
-    secs.forEach(function(s,i){if(!s)return;var t=s.getBoundingClientRect().top;if(t<=y&&t>bt){bt=t;best=i}});
+  var lock=-1,lkT=null;
+  function pick(){var y=innerHeight*.4,best=-1,bt=-1e9,first=-1,ft=1e9;
+    /* 1.º: a primeira secção cujo início está visível na parte de cima do ecrã (resolve as secções curtas, como «Plataformas»);
+       2.º: senão, a secção em que estamos (a última que já passou o cimo) */
+    secs.forEach(function(s,i){if(!s)return;var t=s.getBoundingClientRect().top;if(t<=y&&t>bt){bt=t;best=i}if(t>=-4&&t<=y&&t<ft){ft=t;first=i}});
+    if(first>=0)best=first;
+    /* fim da página: a última secção visível (o «Contacto» pode nunca chegar ao cimo) */
+    var de=d.documentElement;if((window.scrollY||0)+innerHeight>=de.scrollHeight-4){for(var i=secs.length-1;i>=0;i--){if(secs[i]&&secs[i].getBoundingClientRect().top<innerHeight-40){if(i>best)best=i;break}}}
+    return best}
+  function spy(){tick=false;
     if(tb)tb.classList.toggle("on",(window.scrollY||0)>900);
+    var best=lock>=0?lock:pick();
     if(best===cur)return;var first=cur===-2;cur=best;
     var hr=best>=0?links[best].getAttribute("href"):"";tl.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")===hr)});links.forEach(function(a,i){a.classList.toggle("on",i===best)});
     if(!osd||first||best<0||JH_RM||(mn&&!mn.hidden))return;
     osd.firstChild.textContent=best+1;osd.lastChild.textContent=links[best].lastChild.textContent;
     osd.classList.add("on");clearTimeout(ot);ot=setTimeout(function(){osd.classList.remove("on")},1500)}
+  /* ao clicar no menu, o separador clicado fica logo marcado e mantém-se até a pessoa voltar a deslizar a página */
+  var settled=false;
+  function unlock(){if(lock<0)return;lock=-1;settled=false;clearTimeout(lkT);spy()}
+  d.addEventListener("click",function(e){var a=e.target&&e.target.closest?e.target.closest("a[href^='#']"):null;if(!a)return;var h=a.getAttribute("href"),k=-1;
+    links.forEach(function(l,i){if(l.getAttribute("href")===h)k=i});if(k<0||!secs[k])return;
+    lock=k;settled=false;clearTimeout(lkT);lkT=setTimeout(function(){settled=true},900);setTimeout(spy,0)});
+  addEventListener("scroll",function(){if(lock<0)return;if(settled){unlock();return}clearTimeout(lkT);lkT=setTimeout(function(){settled=true},260)},{passive:true});
+  ["wheel","touchmove"].forEach(function(ev){addEventListener(ev,unlock,{passive:true})});
+  addEventListener("keydown",function(e){if(/^(Arrow(Up|Down)|Page(Up|Down)|Home|End| )$/.test(e.key))unlock()});
   addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(spy)}},{passive:true});spy();
 }
 
