@@ -15,7 +15,7 @@
     <a class="brand" href="/"><img src="/logo.svg" alt="" width="36" height="36"><span>JH <b>IPTV</b></span></a>
     <nav class="nav" aria-label="Menu"><a href="/" data-i="foot_home">Início</a><a href="/#descarregar" data-i="nav_dl">Descarregar</a><a href="/#contacto" data-i="nav_ct">Contacto</a></nav>
     <div class="lang"><select id="langSel" aria-label="Idioma / Language">
-      <option value="pt">Português</option><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="it">Italiano</option>
+      <option value="pt">Português</option><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="nl">Nederlands</option><option value="pl">Polski</option><option value="ro">Română</option><option value="tr">Türkçe</option><option value="id">Bahasa Indonesia</option><option value="hi">हिन्दी</option><option value="ar">العربية</option><option value="ur">اردو</option>
     </select></div>
   </div>
 </header>
@@ -32,7 +32,7 @@
 <script>
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 var UPD={pt:"Última atualização: 11 de novembro de 2026",en:"Last updated: 11 November 2026",es:"Última actualización: 11 de noviembre de 2026",fr:"Dernière mise à jour : 11 novembre 2026",de:"Zuletzt aktualisiert: 11. November 2026",it:"Ultimo aggiornamento: 11 novembre 2026"};
-window.jhOnLang=function(l){var d=TERMS[l]||TERMS.en;document.getElementById("doc").innerHTML="<h1>"+esc(d.t)+"</h1><p class=\"upd\">"+esc(UPD[l])+"</p><p class=\"lead\">"+esc(d.lead)+"</p><ol>"+d.items.map(function(i){return"<li><p>"+esc(i)+"</p></li>"}).join("")+"</ol><h2 style=\"margin-top:34px\">"+esc(d.dh)+"</h2><ul>"+d.disc.map(function(i){return"<li>"+esc(i)+"</li>"}).join("")+"</ul><p style=\"margin-top:26px\">"+esc(d.pv)+" <a href=\"/privacidade/\">"+esc(jt("foot_priv"))+"</a></p>"};
+window.jhOnLang=function(l){var d=TERMS[l]||TERMS.en;document.getElementById("doc").innerHTML="<h1>"+esc(d.t)+"</h1><p class=\"upd\">"+esc(UPD[l]||UPD.en)+"</p><p class=\"lead\">"+esc(d.lead)+"</p><ol>"+d.items.map(function(i){return"<li><p>"+esc(i)+"</p></li>"}).join("")+"</ol><h2 style=\"margin-top:34px\">"+esc(d.dh)+"</h2><ul>"+d.disc.map(function(i){return"<li>"+esc(i)+"</li>"}).join("")+"</ul><p style=\"margin-top:26px\">"+esc(d.pv)+" <a href=\"/privacidade/\">"+esc(jt("foot_priv"))+"</a></p>"};
 var T={};for(var k in TERMS)T[k]={title:TERMS[k].t+" — JH IPTV",desc:TERMS[k].lead};jhInit(T);
 </script>
 </body>

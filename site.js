@@ -1,12 +1,20 @@
 /* JH IPTV — idiomas do site (pt, en, es, fr, de, it) */
-var JH_LANGS=["pt","en","es","fr","de","it"];
+var JH_LANGS=["pt", "en", "es", "fr", "de", "it", "nl", "pl", "ro", "tr", "id", "hi", "ar", "ur"],JH_RTL={ar:1,ur:1},JH_IMG={pt:1,en:1,es:1,fr:1,de:1,it:1};
 var JH_COMMON={
 pt:{nav_feat:"Funcionalidades",nav_dl:"Descarregar",nav_qr:"Telemóvel → TV",nav_ct:"Contacto",foot_priv:"Política de privacidade",foot_terms:"Termos de utilização",foot_ct:"Contacto",foot_home:"Início",skip:"Saltar para o conteúdo"},
 en:{nav_feat:"Features",nav_dl:"Download",nav_qr:"Phone → TV",nav_ct:"Contact",foot_priv:"Privacy policy",foot_terms:"Terms of use",foot_ct:"Contact",foot_home:"Home",skip:"Skip to content"},
 es:{nav_feat:"Funciones",nav_dl:"Descargar",nav_qr:"Móvil → TV",nav_ct:"Contacto",foot_priv:"Política de privacidad",foot_terms:"Términos de uso",foot_ct:"Contacto",foot_home:"Inicio",skip:"Saltar al contenido"},
 fr:{nav_feat:"Fonctions",nav_dl:"Télécharger",nav_qr:"Téléphone → TV",nav_ct:"Contact",foot_priv:"Politique de confidentialité",foot_terms:"Conditions d'utilisation",foot_ct:"Contact",foot_home:"Accueil",skip:"Aller au contenu"},
 de:{nav_feat:"Funktionen",nav_dl:"Download",nav_qr:"Handy → TV",nav_ct:"Kontakt",foot_priv:"Datenschutz",foot_terms:"Nutzungsbedingungen",foot_ct:"Kontakt",foot_home:"Startseite",skip:"Zum Inhalt springen"},
-it:{nav_feat:"Funzioni",nav_dl:"Scarica",nav_qr:"Telefono → TV",nav_ct:"Contatti",foot_priv:"Informativa sulla privacy",foot_terms:"Termini di utilizzo",foot_ct:"Contatti",foot_home:"Home",skip:"Vai al contenuto"}
+it:{nav_feat:"Funzioni",nav_dl:"Scarica",nav_qr:"Telefono → TV",nav_ct:"Contatti",foot_priv:"Informativa sulla privacy",foot_terms:"Termini di utilizzo",foot_ct:"Contatti",foot_home:"Home",skip:"Vai al contenuto"},
+nl:{"nav_feat": "Functies", "nav_dl": "Downloaden", "nav_qr": "Telefoon → tv", "nav_ct": "Contact", "foot_priv": "Privacybeleid", "foot_terms": "Gebruiksvoorwaarden", "foot_ct": "Contact", "foot_home": "Start", "skip": "Naar de inhoud"},
+pl:{"nav_feat": "Funkcje", "nav_dl": "Pobierz", "nav_qr": "Telefon → TV", "nav_ct": "Kontakt", "foot_priv": "Polityka prywatności", "foot_terms": "Warunki użytkowania", "foot_ct": "Kontakt", "foot_home": "Start", "skip": "Przejdź do treści"},
+ro:{"nav_feat": "Funcții", "nav_dl": "Descarcă", "nav_qr": "Telefon → TV", "nav_ct": "Contact", "foot_priv": "Politica de confidențialitate", "foot_terms": "Termeni de utilizare", "foot_ct": "Contact", "foot_home": "Acasă", "skip": "Sari la conținut"},
+tr:{"nav_feat": "Özellikler", "nav_dl": "İndir", "nav_qr": "Telefon → TV", "nav_ct": "İletişim", "foot_priv": "Gizlilik politikası", "foot_terms": "Kullanım koşulları", "foot_ct": "İletişim", "foot_home": "Ana sayfa", "skip": "İçeriğe geç"},
+id:{"nav_feat": "Fitur", "nav_dl": "Unduh", "nav_qr": "Ponsel → TV", "nav_ct": "Kontak", "foot_priv": "Kebijakan privasi", "foot_terms": "Ketentuan penggunaan", "foot_ct": "Kontak", "foot_home": "Beranda", "skip": "Langsung ke konten"},
+hi:{"nav_feat": "सुविधाएँ", "nav_dl": "डाउनलोड", "nav_qr": "फ़ोन → टीवी", "nav_ct": "संपर्क", "foot_priv": "गोपनीयता नीति", "foot_terms": "उपयोग की शर्तें", "foot_ct": "संपर्क", "foot_home": "होम", "skip": "सामग्री पर जाएँ"},
+ar:{"nav_feat": "الميزات", "nav_dl": "تنزيل", "nav_qr": "الهاتف ← التلفاز", "nav_ct": "اتصل بنا", "foot_priv": "سياسة الخصوصية", "foot_terms": "شروط الاستخدام", "foot_ct": "اتصل بنا", "foot_home": "الرئيسية", "skip": "انتقل إلى المحتوى"},
+ur:{"nav_feat": "خصوصیات", "nav_dl": "ڈاؤن لوڈ", "nav_qr": "فون ← ٹی وی", "nav_ct": "رابطہ", "foot_priv": "رازداری کی پالیسی", "foot_terms": "استعمال کی شرائط", "foot_ct": "رابطہ", "foot_home": "ہوم", "skip": "مواد پر جائیں"}
 };
 function jhLang(){
   try{var q=(location.search.match(/[?&]lang=([a-z]{2})/)||[])[1];if(q&&JH_LANGS.indexOf(q)>=0)return q}catch(e){}
@@ -16,17 +24,17 @@ function jhLang(){
   return"en";
 }
 var JHL="en",JHD={};
-function jt(k){var d=JHD[JHL]||{},c=JH_COMMON[JHL]||{};return d[k]!=null?d[k]:c[k]!=null?c[k]:(JHD.pt&&JHD.pt[k]!=null?JHD.pt[k]:(JH_COMMON.pt[k]||k))}
+function jt(k){var d=JHD[JHL]||JHD.en||{},c=JH_COMMON[JHL]||{};return d[k]!=null?d[k]:c[k]!=null?c[k]:(JHD.pt&&JHD.pt[k]!=null?JHD.pt[k]:(JH_COMMON.pt[k]||k))}
 function jhApply(l){
   JHL=l;try{localStorage.setItem("jhiptv.site.lang",l)}catch(e){}
-  document.documentElement.lang=l;
+  document.documentElement.lang=l;document.documentElement.dir=JH_RTL[l]?"rtl":"ltr";document.documentElement.classList.toggle("rtl",!!JH_RTL[l]);
   var q=function(s){return document.querySelectorAll(s)};
   [].forEach.call(q("[data-i]"),function(e){e.textContent=jt(e.getAttribute("data-i"))});
   [].forEach.call(q("[data-ih]"),function(e){e.innerHTML=jt(e.getAttribute("data-ih"))});
   [].forEach.call(q("[data-ip]"),function(e){e.setAttribute("placeholder",jt(e.getAttribute("data-ip")))});
   [].forEach.call(q("[data-ia]"),function(e){e.setAttribute("aria-label",jt(e.getAttribute("data-ia")))});
   [].forEach.call(q("[data-ialt]"),function(e){e.setAttribute("alt",jt(e.getAttribute("data-ialt")))});
-  [].forEach.call(q("img[data-src]"),function(e){e.src=e.getAttribute("data-src").replace("{l}",l)});
+  [].forEach.call(q("img[data-src]"),function(e){e.src=e.getAttribute("data-src").replace("{l}",JH_IMG[l]?l:"en")});
   [].forEach.call(q("[data-host]"),function(e){e.textContent=location.host+e.getAttribute("data-host")});
   if(jt("title")!=="title")document.title=jt("title");
   var m=document.querySelector('meta[name="description"]');if(m&&jt("desc")!=="desc")m.setAttribute("content",jt("desc"));
@@ -46,7 +54,15 @@ en:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#012169"/><path 
 es:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg>',
 fr:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#EF4135"/><rect width="20" height="20" fill="#fff"/><rect width="10" height="20" fill="#0055A4"/></svg>',
 de:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#FFCE00"/><rect width="30" height="13.4" fill="#DD0000"/><rect width="30" height="6.7" fill="#000"/></svg>',
-it:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#CE2B37"/><rect width="20" height="20" fill="#fff"/><rect width="10" height="20" fill="#009246"/></svg>'};
+it:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#CE2B37"/><rect width="20" height="20" fill="#fff"/><rect width="10" height="20" fill="#009246"/></svg>',
+nl:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#21468B"/><rect width="30" height="13.3" fill="#fff"/><rect width="30" height="6.7" fill="#AE1C28"/></svg>',
+pl:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#DC143C"/><rect width="30" height="10" fill="#fff"/></svg>',
+ro:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#CE1126"/><rect width="20" height="20" fill="#FCD116"/><rect width="10" height="20" fill="#002B7F"/></svg>',
+tr:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#E30A17"/><circle cx="11" cy="10" r="5" fill="#fff"/><circle cx="12.3" cy="10" r="4" fill="#E30A17"/><path d="M17.2 10l-3.1 1 1.9-2.6v3.2l-1.9-2.6z" fill="#fff"/></svg>',
+id:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#fff"/><rect width="30" height="10" fill="#CE1126"/></svg>',
+hi:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#138808"/><rect width="30" height="13.3" fill="#fff"/><rect width="30" height="6.7" fill="#FF9933"/><circle cx="15" cy="10" r="2.6" fill="none" stroke="#000080" stroke-width=".7"/><circle cx="15" cy="10" r=".6" fill="#000080"/></svg>',
+ar:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#000"/><rect width="30" height="13.3" fill="#fff"/><rect width="30" height="6.7" fill="#00732F"/><rect width="8" height="20" fill="#FF0000"/></svg>',
+ur:'<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#01411C"/><rect width="7.5" height="20" fill="#fff"/><circle cx="19.5" cy="10" r="5" fill="#fff"/><circle cx="20.9" cy="8.9" r="4.3" fill="#01411C"/><path d="M22.6 7.2l.5 1.5 1.6-.1-1.3.9.6 1.5-1.3-1-1.3 1 .5-1.5-1.3-.9h1.6z" fill="#fff"/></svg>'};
 function jhFlag(l){return'<span class="flag">'+(JH_FLAGS[l]||"")+'</span>'}
 function jhFlagPicker(){
   var s=document.getElementById("langSel");if(!s||s.getAttribute("data-fp"))return;s.setAttribute("data-fp","1");
