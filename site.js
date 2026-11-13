@@ -19,12 +19,10 @@ ur:{"nav_feat": "خصوصیات", "nav_dl": "ڈاؤن لوڈ", "nav_qr": "فون
 function jhLang(){
   try{var q=(location.search.match(/[?&]lang=([a-z]{2})/)||[])[1];if(q&&JH_LANGS.indexOf(q)>=0)return q}catch(e){}
   try{var s=localStorage.getItem("jhiptv.site.lang");if(JH_LANGS.indexOf(s)>=0)return s}catch(e){}
-  var l=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"en"];
-  for(var i=0;i<l.length;i++){var c=String(l[i]).slice(0,2).toLowerCase();if(JH_LANGS.indexOf(c)>=0)return c}
   return"en";
 }
 var JHL="en",JHD={};
-function jt(k){var d=JHD[JHL]||JHD.en||{},c=JH_COMMON[JHL]||{};return d[k]!=null?d[k]:c[k]!=null?c[k]:(JHD.pt&&JHD.pt[k]!=null?JHD.pt[k]:(JH_COMMON.pt[k]||k))}
+function jt(k){var d=JHD[JHL]||JHD.en||{},c=JH_COMMON[JHL]||{};return d[k]!=null?d[k]:c[k]!=null?c[k]:(JHD.en&&JHD.en[k]!=null?JHD.en[k]:(JH_COMMON.en[k]||k))}
 function jhApply(l){
   JHL=l;try{localStorage.setItem("jhiptv.site.lang",l)}catch(e){}
   document.documentElement.lang=l;document.documentElement.dir=JH_RTL[l]?"rtl":"ltr";document.documentElement.classList.toggle("rtl",!!JH_RTL[l]);
