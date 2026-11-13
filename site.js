@@ -149,9 +149,7 @@ function jhTV(){var sc=document.getElementById("tvScr");if(!sc)return;
   var osd=document.getElementById("tvOsd");if(osd)osd.classList.add("show");restart()}
 function jhSrc(){var li=[].slice.call(document.querySelectorAll(".plat li"));if(!li.length)return;var k=0;
   var go=function(){li.forEach(function(x,j){x.classList.toggle("sel",j===k)});k=(k+1)%li.length};go();if(!JH_RM)setInterval(function(){if(!document.hidden)go()},1600);
-  var ep=[].slice.call(document.querySelectorAll(".epg .ep"));if(!ep.length||JH_RM)return;var e=0,hov=false;
-  var g=document.querySelector(".epg");g.addEventListener("mouseenter",function(){hov=true;ep.forEach(function(x){x.classList.remove("sel")})});g.addEventListener("mouseleave",function(){hov=false});
-  setInterval(function(){if(hov||document.hidden)return;ep.forEach(function(x,j){x.classList.toggle("sel",j===e)});e=(e+1)%ep.length},1800)}
+}
 
 /* ===== v6: menu no telemóvel, versões, secção ativa com "número do canal", demo QR ===== */
 function jhV6(){
@@ -180,3 +178,9 @@ function jhV6(){
     osd.classList.add("on");clearTimeout(ot);ot=setTimeout(function(){osd.classList.remove("on")},1500)}
   addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(spy)}},{passive:true});spy();
 }
+
+/* funções arrumadas por separadores */
+(function(){var tabs=[].slice.call(document.querySelectorAll(".ftab"));if(!tabs.length)return;
+  function sel(t,focus){tabs.forEach(function(x){var on=x===t;x.setAttribute("aria-selected",on?"true":"false");x.tabIndex=on?0:-1;var p=document.getElementById(x.getAttribute("aria-controls"));if(p)p.hidden=!on});if(focus)t.focus()}
+  tabs.forEach(function(t,i){t.addEventListener("click",function(){sel(t)});t.addEventListener("keydown",function(e){var k=e.key,n=null;if(k==="ArrowRight")n=tabs[(i+1)%tabs.length];else if(k==="ArrowLeft")n=tabs[(i-1+tabs.length)%tabs.length];else if(k==="Home")n=tabs[0];else if(k==="End")n=tabs[tabs.length-1];if(n){e.preventDefault();sel(n,true)}})});
+  sel(tabs[0])})();
