@@ -19,6 +19,7 @@ ur:{"nav_feat": "خصوصیات", "nav_dl": "ڈاؤن لوڈ", "nav_qr": "فون
 function jhLang(){
   try{var q=(location.search.match(/[?&]lang=([a-z]{2})/)||[])[1];if(q&&JH_LANGS.indexOf(q)>=0)return q}catch(e){}
   try{var s=localStorage.getItem("jhiptv.site.lang");if(JH_LANGS.indexOf(s)>=0)return s}catch(e){}
+  try{var l=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||""];for(var i=0;i<l.length;i++){var c=String(l[i]).slice(0,2).toLowerCase();if(JH_LANGS.indexOf(c)>=0)return c}}catch(e){}
   return"en";
 }
 var JHL="en",JHD={};

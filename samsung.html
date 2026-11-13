@@ -254,7 +254,7 @@ b{font-weight:700}
 <script src="/site.js"></script>
 <script>
 (function(){var N={"pt": ["Início", "Descarregar", "Contacto"], "en": ["Home", "Download", "Contact"], "es": ["Inicio", "Descargar", "Contacto"], "fr": ["Accueil", "Télécharger", "Contact"], "de": ["Start", "Download", "Kontakt"], "it": ["Home", "Scarica", "Contatti"], "nl": ["Home", "Downloaden", "Contact"], "pl": ["Start", "Pobierz", "Kontakt"], "ro": ["Acasă", "Descarcă", "Contact"], "tr": ["Ana sayfa", "İndir", "İletişim"], "id": ["Beranda", "Unduh", "Kontak"], "hi": ["होम", "डाउनलोड", "संपर्क"], "ar": ["الرئيسية", "تنزيل", "اتصل بنا"], "ur": ["ہوم", "ڈاؤن لوڈ", "رابطہ"]},L="en";try{L=localStorage.getItem("jhiptv.site.lang")||"en"}catch(e){}
-if(!N[L])L="en";
+if(!N[L]){L="en";try{var nl=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||""];for(var i=0;i<nl.length;i++){var c=String(nl[i]).slice(0,2).toLowerCase();if(N[c]){L=c;break}}}catch(e){}}
 var s=document.getElementById("langSel");
 function set(l){L=l;document.documentElement.lang=l;document.documentElement.dir=(l=="ar"||l=="ur")?"rtl":"ltr";document.documentElement.classList.toggle("rtl",l=="ar"||l=="ur");s.value=l;[].forEach.call(document.querySelectorAll("article[data-l]"),function(a){a.hidden=a.getAttribute("data-l")!==l});var n=N[l];document.getElementById("n1").textContent=n[0];document.getElementById("n2").textContent=n[1];document.getElementById("n3").textContent=n[2];document.title="JH IPTV — "+document.querySelector('article[data-l="'+l+'"] h1').textContent;try{localStorage.setItem("jhiptv.site.lang",l)}catch(e){}}
 s.addEventListener("change",function(){set(s.value)});set(L)})();
