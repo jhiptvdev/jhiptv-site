@@ -585,3 +585,5 @@ html.mopen{overflow:hidden}
 .d6 .scr:after{content:"";position:absolute;inset:0;background:radial-gradient(50% 60% at 45% 40%,rgba(255,200,97,.55),transparent 70%);opacity:0;pointer-events:none}
 .d6.run .scr:after{animation:d6fl 9s linear infinite}
 @keyframes d6fl{0%,65%{opacity:0}68%{opacity:1}74%,100%{opacity:0}}
+
+.store .badge{margin-top:auto;display:block;padding-top:4px}.store .badge img{display:block;height:44px;width:auto;max-width:100%}

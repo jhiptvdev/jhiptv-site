@@ -34,6 +34,7 @@ function jhApply(l){
   [].forEach.call(q("[data-ia]"),function(e){e.setAttribute("aria-label",jt(e.getAttribute("data-ia")))});
   [].forEach.call(q("[data-ialt]"),function(e){e.setAttribute("alt",jt(e.getAttribute("data-ialt")))});
   [].forEach.call(q("img[data-src]"),function(e){e.src=e.getAttribute("data-src").replace("{l}",JH_IMG[l]?l:"en")});
+  [].forEach.call(q("img[data-msbadge]"),function(e){e.src="https://get.microsoft.com/images/"+(l==="pt"?"pt-pt":l==="en"?"en-us":l)+"%20dark.svg"});
   [].forEach.call(q("[data-host]"),function(e){e.textContent=location.host+e.getAttribute("data-host")});
   if(jt("title")!=="title")document.title=jt("title");
   var m=document.querySelector('meta[name="description"]');if(m&&jt("desc")!=="desc")m.setAttribute("content",jt("desc"));
