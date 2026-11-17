@@ -551,7 +551,7 @@ html.mopen{overflow:hidden}
 @media (max-width:620px){.v6 .epg{grid-template-columns:1fr}.v6 .ep{grid-template-columns:42px minmax(0,1fr);padding:16px 16px 18px}}
 
 /* lojas */
-.v6 .stores{grid-template-columns:1.5fr repeat(4,minmax(0,1fr))}
+.v6 .stores{grid-template-columns:repeat(2,minmax(0,1.3fr)) repeat(3,minmax(0,1fr))}
 .v6 .store.soon{border-style:solid;border-color:#1d2543;background:rgba(15,21,48,.5)}
 .v6 .store.soon h3,.v6 .store.soon small,.v6 .store.soon .ic{opacity:.62}
 .v6 .store.soon .tag{text-transform:none;letter-spacing:0;font:600 13px/1 var(--font);color:var(--muted);background:none;border-color:var(--line)}
