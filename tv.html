@@ -57,9 +57,10 @@
       <ul class="qlist" id="qList"></ul>
     </div>
     <form class="card" id="listForm" novalidate autocomplete="off">
-      <div class="seg" role="group">
+      <div class="seg" role="group" style="grid-template-columns:repeat(3,1fr)">
         <button type="button" id="tX" aria-pressed="true">Xtream Codes</button>
         <button type="button" id="tM" aria-pressed="false" data-i="tab_m"></button>
+        <button type="button" id="tS" aria-pressed="false">Stalker</button>
       </div>
       <label><span data-i="f_name"></span><input id="fName" maxlength="40" data-ip="p_name"></label>
       <div id="xF" style="display:grid;gap:16px">
@@ -70,6 +71,10 @@
       <div id="mF" style="display:none;gap:16px">
         <label><span data-i="f_m3u"></span><input id="fM3u" type="url" inputmode="url" autocapitalize="off" spellcheck="false" placeholder="http://…/get.php?username=…"></label>
         <label><span data-i="f_epg"></span><input id="fEpg" type="url" inputmode="url" autocapitalize="off" spellcheck="false" placeholder="http://…/xmltv.php?…"></label>
+      </div>
+      <div id="sF" style="display:none;gap:16px">
+        <label><span>Portal</span><input id="fPortal" type="url" inputmode="url" autocapitalize="off" spellcheck="false" placeholder="http://portal.com:8080/c/"></label>
+        <label><span>MAC</span><input id="fMac" autocapitalize="characters" spellcheck="false" autocomplete="off" maxlength="17" placeholder="00:1A:79:00:00:00"></label>
       </div>
       <button class="btn" type="button" id="moreBtn"><span data-i="add_more"></span></button>
       <p class="fine" data-i="more_hint"></p>
@@ -143,8 +148,11 @@ foot:"I dati viaggiano cifrati tramite un servizio di messaggi (ntfy.sh) e vengo
   function view(v){["vCode","vForm","vDone"].forEach(function(k){$(k).hidden=k!==v});window.scrollTo(0,0)}
   function msg(id,t){var m=$(id);m.textContent=t||"";m.className=t?"msg err":"msg"}
   function useCode(c){code=JHPAIR.norm(c);$("codeShow").textContent=JHPAIR.fmt(code);view("vForm");setTimeout(function(){$("fName").focus()},50)}
-  function setTab(t){tab=t;$("tX").setAttribute("aria-pressed",t==="x");$("tM").setAttribute("aria-pressed",t==="m");$("xF").style.display=t==="x"?"grid":"none";$("mF").style.display=t==="m"?"grid":"none";msg("formMsg","")}
-  $("tX").onclick=function(){setTab("x")};$("tM").onclick=function(){setTab("m")};
+  function setTab(t){tab=t;$("tX").setAttribute("aria-pressed",t==="x");$("tM").setAttribute("aria-pressed",t==="m");$("tS").setAttribute("aria-pressed",t==="s");$("xF").style.display=t==="x"?"grid":"none";$("mF").style.display=t==="m"?"grid":"none";$("sF").style.display=t==="s"?"grid":"none";msg("formMsg","")}
+  $("tX").onclick=function(){setTab("x")};$("tM").onclick=function(){setTab("m")};$("tS").onclick=function(){setTab("s")};
+  function macNorm(m){var h=String(m||"").toUpperCase().replace(/[^0-9A-F]/g,"");return h.length===12?h.match(/../g).join(":"):""}
+  var E_S={pt:"Escreva o endereço do portal e o MAC (12 letras e números, ex.: 00:1A:79:00:00:00).",en:"Enter the portal address and the MAC (12 letters and digits, e.g. 00:1A:79:00:00:00).",es:"Escribe la dirección del portal y la MAC (12 letras y números, p. ej. 00:1A:79:00:00:00).",fr:"Saisissez l’adresse du portail et la MAC (12 lettres et chiffres, ex. 00:1A:79:00:00:00).",de:"Portal-Adresse und MAC eingeben (12 Buchstaben und Ziffern, z. B. 00:1A:79:00:00:00).",it:"Inserisci l’indirizzo del portale e il MAC (12 lettere e cifre, es. 00:1A:79:00:00:00).",ar:"اكتب عنوان البوابة وعنوان MAC (12 حرفًا ورقمًا، مثل 00:1A:79:00:00:00).",nl:"Vul het portaaladres en het MAC-adres in (12 letters en cijfers, bijv. 00:1A:79:00:00:00).",pl:"Wpisz adres portalu i MAC (12 liter i cyfr, np. 00:1A:79:00:00:00).",ro:"Scrieți adresa portalului și MAC-ul (12 litere și cifre, ex. 00:1A:79:00:00:00).",tr:"Portal adresini ve MAC’i yazın (12 harf ve rakam, örn. 00:1A:79:00:00:00).",id:"Tulis alamat portal dan MAC (12 huruf dan angka, mis. 00:1A:79:00:00:00).",hi:"पोर्टल का पता और MAC लिखें (12 अक्षर और अंक, जैसे 00:1A:79:00:00:00)।",ur:"پورٹل کا پتہ اور MAC لکھیں (12 حروف اور ہندسے، مثلاً 00:1A:79:00:00:00)۔"};
+  function eS(){var l=(document.documentElement.lang||"en").slice(0,2).toLowerCase();return E_S[l]||E_S.en}
   window.jhOnLang=function(){$("pwT").textContent=jt($("fPass").type==="password"?"show":"hide")};
   $("pwT").onclick=function(){var p=$("fPass");p.type=p.type==="password"?"text":"password";window.jhOnLang()};
   /* código vindo do QR (#XXXX…) — fica só no telemóvel; o "#" nunca é enviado ao servidor */
@@ -157,39 +165,41 @@ foot:"I dati viaggiano cifrati tramite un servizio di messaggi (ntfy.sh) e vengo
   function fixUrl(u){u=u.trim();if(u&&!/^https?:\/\//i.test(u))u="http://"+u;return u.replace(/\s+/g,"")}
   var queue=[];
   function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-  function formEmpty(){return tab==="x"?!($("fServer").value.trim()||$("fUser").value.trim()||$("fPass").value):!($("fM3u").value.trim()||$("fEpg").value.trim())}
+  function formEmpty(){return tab==="x"?!($("fServer").value.trim()||$("fUser").value.trim()||$("fPass").value):tab==="s"?!($("fPortal").value.trim()||$("fMac").value.trim()):!($("fM3u").value.trim()||$("fEpg").value.trim())}
   function collect(){
     var o={v:1,t:Date.now(),name:$("fName").value.trim()};
     if(tab==="x"){o.type="xtream";o.server=fixUrl($("fServer").value).replace(/\/+$/,"");o.user=$("fUser").value.trim();o.pass=$("fPass").value;
       if(!/^https?:\/\/[^\s/]+/i.test(o.server)||!o.user||!o.pass){msg("formMsg",jt("e_x"));return null}}
+    else if(tab==="s"){o.type="stalker";o.portal=fixUrl($("fPortal").value);o.mac=macNorm($("fMac").value);
+      if(!/^https?:\/\/[^\s/]+/i.test(o.portal)||!o.mac){msg("formMsg",eS());return null}}
     else{o.type="m3u";o.url=fixUrl($("fM3u").value);o.epg=fixUrl($("fEpg").value);
       if(!/^https?:\/\/\S+\.\S+/i.test(o.url)){msg("formMsg",jt("e_m"));return null}}
     return o}
-  function clearForm(){["fName","fServer","fUser","fPass","fM3u","fEpg"].forEach(function(k){$(k).value=""});msg("formMsg","")}
+  function clearForm(){["fName","fServer","fUser","fPass","fM3u","fEpg","fPortal","fMac"].forEach(function(k){$(k).value=""});msg("formMsg","")}
   function host(u){return String(u||"").replace(/^https?:\/\//i,"").split(/[\/?#]/)[0]}
   function total(){return queue.length+(formEmpty()?0:1)}
   function label(){var n=total();$("sendLbl").textContent=n>1?jt("send_n").replace("{n}",n):jt("send")}
   function drawQ(){$("qCard").hidden=!queue.length;
-    $("qList").innerHTML=queue.map(function(o,i){return'<li><span class="qn"><b>'+esc(o.name||host(o.type==="xtream"?o.server:o.url))+'</b><small>'+esc(o.type==="xtream"?"Xtream Codes · "+host(o.server):"M3U · "+host(o.url))+'</small></span><button type="button" data-q="'+i+'">'+esc(jt("remove"))+'</button></li>'}).join("");label()}
+    $("qList").innerHTML=queue.map(function(o,i){return'<li><span class="qn"><b>'+esc(o.name||host(o.type==="xtream"?o.server:o.type==="stalker"?o.portal:o.url))+'</b><small>'+esc(o.type==="xtream"?"Xtream Codes · "+host(o.server):o.type==="stalker"?"Stalker · "+host(o.portal):"M3U · "+host(o.url))+'</small></span><button type="button" data-q="'+i+'">'+esc(jt("remove"))+'</button></li>'}).join("");label()}
   $("qList").onclick=function(e){var b=e.target.closest?e.target.closest("[data-q]"):null;if(!b)return;queue.splice(+b.getAttribute("data-q"),1);drawQ()};
   $("moreBtn").onclick=function(){var o=collect();if(!o)return;queue.push(o);clearForm();drawQ();window.scrollTo(0,0);setTimeout(function(){$("fName").focus()},50)};
   $("listForm").addEventListener("input",label);
   var jl0=window.jhOnLang;window.jhOnLang=function(){if(jl0)jl0();drawQ()};drawQ();
   function post(o){var body=JHPAIR.seal(code,o);return fetch(JHPAIR.topicUrl(code),{method:"POST",body:body,cache:"no-store",referrerPolicy:"no-referrer"}).then(function(r){if(!r.ok)throw 0})}
   /* várias listas: vão juntas (em partes pequenas, se forem muitas); a primeira segue também no formato antigo, para TVs com a app por atualizar */
-  function parts(items){var out=[],cur=[];items.forEach(function(o){var it={type:o.type,name:o.name};if(o.type==="xtream"){it.server=o.server;it.user=o.user;it.pass=o.pass}else{it.url=o.url;it.epg=o.epg}
+  function parts(items){var out=[],cur=[];items.forEach(function(o){var it={type:o.type,name:o.name};if(o.type==="xtream"){it.server=o.server;it.user=o.user;it.pass=o.pass}else if(o.type==="stalker"){it.portal=o.portal;it.mac=o.mac}else{it.url=o.url;it.epg=o.epg}
       if(cur.length&&JSON.stringify(cur.concat([it])).length>1800){out.push(cur);cur=[]}cur.push(it)});if(cur.length)out.push(cur);return out}
   $("listForm").onsubmit=function(e){
     e.preventDefault();
     var items=queue.slice();
     if(!formEmpty()||!items.length){var o=collect();if(!o)return;items.push(o)}
     var b=$("sendBtn");b.disabled=true;$("sendLbl").textContent=jt("sending");msg("formMsg","");
-    var many=items.length>1,job;
+    var many=items.length>1,job,stk=items.some(function(x){return x.type==="stalker"}),old=null;items.forEach(function(x){if(!old&&x.type!=="stalker")old=x});
     try{
-      if(!many)job=post(items[0]);
+      if(!many&&!stk)job=post(items[0]);
       else{var ps=parts(items),bid=Date.now().toString(36)+Math.random().toString(36).slice(2,6);job=Promise.resolve();
         ps.forEach(function(p,i){job=job.then(function(){return post({v:1,t:Date.now(),type:"lists",bid:bid,part:i+1,of:ps.length,items:p})})});
-        job=job.then(function(){return post(items[0]).catch(function(){})})}
+        if(old)job=job.then(function(){return post(old).catch(function(){})})}
     }catch(x){job=Promise.reject(x)}
     job.then(function(){queue=[];clearForm();drawQ();$("doneP").textContent=jt(many?"done_pn":"done_p");view("vDone")},function(){msg("formMsg",jt("e_net"))})
       .then(function(){b.disabled=false;label()});
